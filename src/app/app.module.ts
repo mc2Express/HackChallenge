@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpModule, RequestOptions } from '@angular/http';
 
-import { AlertModule } from 'ng2-bootstrap';
+import { AlertModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -19,7 +19,7 @@ import { rootRouterConfig } from './app.routes';
     AppComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, FlexLayoutModule.forRoot(), ReactiveFormsModule, RouterModule.forRoot(rootRouterConfig), MomentModule,
+    BrowserModule, FormsModule, HttpModule, FlexLayoutModule, ReactiveFormsModule, RouterModule.forRoot(rootRouterConfig), MomentModule,
     AlertModule.forRoot()
   ],
   providers: [
