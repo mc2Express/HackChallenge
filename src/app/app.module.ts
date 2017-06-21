@@ -19,7 +19,7 @@ import { rootRouterConfig } from './app.routes';
     AppComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, FlexLayoutModule.forRoot(), ReactiveFormsModule, RouterModule.forRoot(rootRouterConfig), MomentModule,
+    BrowserModule, FormsModule, HttpModule, FlexLayoutModule, ReactiveFormsModule, RouterModule.forRoot(rootRouterConfig), MomentModule,
     AlertModule.forRoot()
   ],
   providers: [
