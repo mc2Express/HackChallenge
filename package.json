@@ -30,7 +30,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "to-string-loader": "^1.1.5",
-    "typescript": "^2.3.4",
+    "typescript": "^2.4.0",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",
     "webpack-merge": "^4.1.0"
@@ -40,7 +40,7 @@
     "@angular/common": "^4.2.3",
     "@angular/compiler": "^4.2.3",
     "@angular/core": "^4.2.3",
-    "@angular/flex-layout": "^2.0.0-beta.8",
+    "@angular/flex-layout": "^2.0.0-rc.1",
     "@angular/forms": "^4.2.3",
     "@angular/http": "^4.2.3",
     "@angular/platform-browser": "^4.2.3",
