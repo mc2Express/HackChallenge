@@ -6,6 +6,8 @@ namespace BusinessDomain
 	{
 		public string ContractNr { get; set; }
 
+		public string SpContractDescription { get; set; }
+
 		public string CreationDate { get; set; }
 
 		public string OffertDate { get; set; }

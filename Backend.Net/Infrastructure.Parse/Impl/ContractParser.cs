@@ -16,6 +16,8 @@ namespace Infrastructure.Parse.Impl
 				TransportClasses = (from tx in xmlDoc.Descendants("TK")
 					select ToTransportClass(tx)).ToList(),
 				ContractNr = xmlDoc.Descendants("VERTRAG_NR").FirstOrDefault()?.Value,
+				SpContractDescription =
+					xmlDoc.Descendants("SP_VERTRAG").FirstOrDefault()?.Descendants("BEZEICHNUNG").FirstOrDefault()?.Value,
 				CreationDate = xmlDoc.Descendants("ERST_DATUM").FirstOrDefault()?.Value,
 				OffertDate = xmlDoc.Descendants("DATUM").FirstOrDefault()?.Value,
 				OffertNr = xmlDoc.Descendants("OFFERT_NR").FirstOrDefault()?.Value
