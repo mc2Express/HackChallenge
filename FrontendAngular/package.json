@@ -1,7 +1,7 @@
 {
- "name": "mc2express",
-  "version": "0.0.1",
-  "description": "The client app used for visualizing the supply chain of rail cargo.",
+  "name": "sb-admin-angular4-bootstrap4",
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --ec=true",
