@@ -1,9 +1,8 @@
-﻿
-using LinqToExcel.Attributes;
+﻿using LinqToExcel.Attributes;
 
 namespace BusinessDomain
 {
-    public class WagonStatus{
+    public class WagonStatus {
 
         [ExcelColumn("ZUGNR")]
         public string ZugNumber { get; set; }
@@ -38,14 +37,11 @@ namespace BusinessDomain
         [ExcelColumn("STORNO")]
         public string Storno { get; set; }
 
-
         [ExcelColumn("EMPF")]
         public string Empfänger { get; set; }
 
-
         [ExcelColumn("LAST_MODIFIED")]
         public string LastModified { get; set; }
-
 
         [ExcelColumn("INSERTED")]
         public string S { get; set; }
