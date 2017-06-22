@@ -17,6 +17,7 @@ namespace WebApi.ExcelImport
 
         public IList<PurchaseContractDto> ImportPurchaseContractExcel(string path){
             var excel = new ExcelQueryFactory(path);
+            excel.ReadOnly = true;
 
             var result = from c in excel.Worksheet<PurchaseContractDto>(0)
                 select c;
