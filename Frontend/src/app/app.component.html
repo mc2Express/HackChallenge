@@ -1,10 +1,1 @@
-<div class="container">
-  <form>
-  <div class="form-group" [formGroup]="sampleFormGroup">
-    <label for="testInput">Some input from the user</label>
-    <input  type="text" class="form-control" id="testInput" placeholder="Something" formControlName="sampleText">
-  </div>
-  <!--Only for introduction to Angular. Do not build real life Apps like this style ;)-->
- {{ this.sampleFormGroup.controls.sampleText.value}}
-</form>
-</div>
+<router-outlet></router-outlet>

@@ -1,24 +1,21 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor(private formBuilder: FormBuilder) {
+    constructor(private translate: TranslateService) {
+        translate.addLangs(['en']);
+        translate.setDefaultLang('en');
 
-  }
-
-  public ngOnInit(): void {
-    this.sampleFormGroup = this.formBuilder.group({
-      sampleText: ["", Validators.required]
-    })
-  }
-
-  public sampleFormGroup: FormGroup;
-
+        const browserLang = translate.getBrowserLang();
+        translate.use(browserLang.match(/en/) ? browserLang : 'en');
+    }
 
 }
+
