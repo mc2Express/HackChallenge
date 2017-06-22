@@ -7,11 +7,12 @@ namespace BusinessDomain
 
         [ExcelColumn("Invoice nb")]
         public string InvoiceNb { get; set; }
+
         
         [ExcelColumn("date of invoice")]
         public string InvoiceDate { get; set; }
 
-        [ExcelColumn("to")]
+        [ExcelColumn("to")] 
         public string To { get; set; }
 
         [ExcelColumn("charged service")]

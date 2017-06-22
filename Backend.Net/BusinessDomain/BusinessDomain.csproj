@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cargo.cs" />
-    <Compile Include="Contract.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="IDomainObject.cs" />
     <Compile Include="IncomingInvoicesConfirmations.cs" />
@@ -71,6 +70,61 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="typescript\test.tst" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="typescript\Cargo.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>Cargo.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\Country.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>Country.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\IncomingInvoicesConfirmations.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>IncomingInvoicesConfirmations.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\PurchaseContract.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>PurchaseContract.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\RailwayBill.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>RailwayBill.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\RelationInfo.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>RelationInfo.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\ShuttleReservation.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>ShuttleReservation.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\ShuttleReservationListItem.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>ShuttleReservationListItem.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\SupplyChain.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>SupplyChain.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\TrainStation.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>TrainStation.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\TransportClass.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>TransportClass.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\Wagon.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>Wagon.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\WagonStatus.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>WagonStatus.cs</CustomToolNamespace>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
