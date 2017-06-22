@@ -42,8 +42,6 @@ namespace ExcelTests
         }
 
 
-
-
         [TestMethod]
         public void WagonStatusImportHandlerTest()
         {
