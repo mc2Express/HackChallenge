@@ -1,10 +1,11 @@
 
 
-module App { 
-    export class Wagon { 
-        public wagonNumber: string;
-        public info: string;
-        public totalWeight: string;
-        public cargo: Cargo;
+module Models {  
+
+    export interface Wagon { 
+        wagonNumber: string;
+        info: string;
+        totalWeight: string;
+        cargo: Cargo;
     }
-} 
+}

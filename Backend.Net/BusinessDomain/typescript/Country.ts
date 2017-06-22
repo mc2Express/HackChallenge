@@ -1,8 +1,9 @@
 
 
-module App { 
-    export class Country { 
-        public countryCode: number;
-        public name: string;
+module Models {  
+
+    export interface Country { 
+        countryCode: number;
+        name: string;
     }
-} 
+}

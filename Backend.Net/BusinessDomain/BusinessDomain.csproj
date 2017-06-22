@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cargo.cs" />
+    <Compile Include="Contract.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="IDomainObject.cs" />
     <Compile Include="IncomingInvoicesConfirmations.cs" />
@@ -76,6 +77,10 @@
     <TypeScriptCompile Include="typescript\Cargo.ts">
       <DependentUpon>test.tst</DependentUpon>
       <CustomToolNamespace>Cargo.cs</CustomToolNamespace>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typescript\Contract.ts">
+      <DependentUpon>test.tst</DependentUpon>
+      <CustomToolNamespace>Contract.cs</CustomToolNamespace>
     </TypeScriptCompile>
     <TypeScriptCompile Include="typescript\Country.ts">
       <DependentUpon>test.tst</DependentUpon>

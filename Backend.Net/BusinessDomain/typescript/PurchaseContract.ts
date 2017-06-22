@@ -1,15 +1,16 @@
 
 
-module App { 
-    export class PurchaseContract { 
-        public purchaseContractNb: string;
-        public dateOfPurchase: string;
-        public conceringRoute: string;
-        public axle: string;
-        public cargo: string;
-        public offeredService: string;
-        public additionalInfos: string;
-        public fee: string;
-        public entity: string;
+module Models {  
+
+    export interface PurchaseContract { 
+        purchaseContractNb: string;
+        dateOfPurchase: string;
+        conceringRoute: string;
+        axle: string;
+        cargo: string;
+        offeredService: string;
+        additionalInfos: string;
+        fee: string;
+        entity: string;
     }
-} 
+}

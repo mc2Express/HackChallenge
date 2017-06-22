@@ -1,9 +1,10 @@
 
 
-module App { 
-    export class Cargo { 
-        public id: string;
-        public description: string;
-        public weight: string;
+module Models {  
+
+    export interface Cargo { 
+        id: string;
+        description: string;
+        weight: string;
     }
-} 
+}

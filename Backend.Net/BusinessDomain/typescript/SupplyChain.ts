@@ -1,7 +1,8 @@
 
 
-module App { 
-    export class SupplyChain { 
-        public contract: ContractModel[];
+module Models {  
+
+    export interface SupplyChain { 
+        contract: Contract[];
     }
-} 
+}

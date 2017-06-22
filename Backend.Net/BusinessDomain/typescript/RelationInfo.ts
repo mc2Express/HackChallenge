@@ -1,19 +1,22 @@
 
 
-module App { 
-    export class RelationInfo { 
-        public lookupStatus: LookupStatus[];
-        public werteGereiht: Werteliste[];
-        public werteFreigegeben: Werteliste[];
-        public werterKzub: Werteliste[];
-        public werteUbehVzweNr: Werteliste[];
+module Models {  
+
+    export interface RelationInfo { 
+        lookupStatus: LookupStatus[];
+        werteGereiht: Werteliste[];
+        werteFreigegeben: Werteliste[];
+        werterKzub: Werteliste[];
+        werteUbehVzweNr: Werteliste[];
+    } 
+
+    export interface LookupStatus { 
+        id: string;
+        status: string;
+    } 
+
+    export interface Werteliste { 
+        wert: string;
+        description: string;
     }
-    export class LookupStatus { 
-        public id: string;
-        public status: string;
-    }
-    export class Werteliste { 
-        public wert: string;
-        public description: string;
-    }
-} 
+}
