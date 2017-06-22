@@ -1,41 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 using BusinessDomain;
 
 namespace Infrastructure.Parse.Impl
 {
+	public class ContractParser : IDocumentParser<Contract>
+	{
+		public Contract Parse(string documentPath)
+		{
+			var xmlDoc = XElement.Load(documentPath);
 
+			var contract = new Contract
+			{
+				TransportClasses = (from tx in xmlDoc.Descendants("TK")
+					select ToTransportClass(tx)).ToList(),
+				ContractNr = xmlDoc.Descendants("VERTRAG_NR").FirstOrDefault()?.Value,
+				CreationDate = xmlDoc.Descendants("ERST_DATUM").FirstOrDefault()?.Value,
+				OffertDate = xmlDoc.Descendants("DATUM").FirstOrDefault()?.Value,
+				OffertNr = xmlDoc.Descendants("OFFERT_NR").FirstOrDefault()?.Value
+			};
+			return contract;
+		}
 
-    internal class ContractParser : BaseXmlParser, IDocumentParser<Contract>
-    {
-        
-
-        public Contract Parse(string documentPath)
-        {
-            //select new Customer
-            //{
-            //    ID = Convert.ToInt32(cust.Element("id").Value),
-            //    Name = cust.Element("customer").Value,
-            //    MeetingType = cust.Element("type").Value,
-            //    CallDate = Convert.ToDateTime(cust.Element("date").Value),
-            //    DurationInHours = Convert.ToInt32(cust.Element("hours").Value),
-            //    Contacts = new Contact()
-            //    {
-            //        Phone = new List<PhoneContact>(from phn in cust.Descendants("phone")
-            //            select new PhoneContact
-            //            {
-            //                Type = phn.Element("type").Value,
-            //                Number = phn.Element("no").Value
-            //            })
-            //    }
-            //};
-            return null;
-        }
-    }
-
-    internal abstract class BaseXmlParser
-    {
-    }
+		private TransportClass ToTransportClass(XElement tx)
+		{
+			var from = tx.Descendants("VON").FirstOrDefault();
+			var to = tx.Descendants("VON").FirstOrDefault();
+			var via = tx.Descendants("UEBER").FirstOrDefault();
+			return new TransportClass
+			{
+				From = new TrainStation
+				{
+					Country = new Country
+					{
+						CountryCode =
+							Convert.ToInt32(from?.Descendants("LAND").FirstOrDefault()?.Value),
+						Name = from?.Descendants("LAND_NAME").FirstOrDefault()?.Value
+					},
+					StationId = from?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value,
+					Name = from?.Descendants("BHF").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value
+				},
+				To = new TrainStation
+				{
+					Country = new Country
+					{
+						CountryCode =
+							Convert.ToInt32(to?.Descendants("LAND").FirstOrDefault()?.Value),
+						Name = to?.Descendants("LAND_NAME").FirstOrDefault()?.Value
+					},
+					StationId = to?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value,
+					Name = to?.Descendants("BHF").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value
+				},
+				Via = new TrainStation
+				{
+					Country = new Country
+					{
+						CountryCode =
+							Convert.ToInt32(via?.Descendants("LAND").FirstOrDefault()?.Value),
+						Name = via?.Descendants("LAND_NAME").FirstOrDefault()?.Value
+					},
+					StationId = via?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value,
+					Name = via?.Descendants("BHF").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value
+				},
+				SzVertragNr = tx.Descendants("SZ_VERTRAG_NR").FirstOrDefault()?.Value
+			};
+		}
+	}
 }
