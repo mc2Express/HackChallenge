@@ -6,17 +6,14 @@ using BusinessDomain;
 
 namespace Infrastructure.Parse.Impl
 {
+
+
     internal class ContractParser : BaseXmlParser, IDocumentParser<Contract>
     {
-
+        
 
         public Contract Parse(string documentPath)
         {
-            XElement xmlDoc = XElement.Load(documentPath);
-            var contract = xmlDoc.Descendants("blbal")
-                .Select(x => new Contract())
-                .FirstOrDefault();
-
             //select new Customer
             //{
             //    ID = Convert.ToInt32(cust.Element("id").Value),
@@ -34,7 +31,7 @@ namespace Infrastructure.Parse.Impl
             //            })
             //    }
             //};
-            return contract;
+            return null;
         }
     }
 
