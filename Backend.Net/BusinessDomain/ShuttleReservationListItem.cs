@@ -4,7 +4,6 @@ namespace BusinessDomain
 {
     public class ShuttleReservationListItem
     {
-
         [ExcelColumn("Fortl.Nr.")]
         public int Number { get; set; }
 
