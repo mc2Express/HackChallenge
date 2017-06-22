@@ -90,39 +90,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Contracts\HF-0022_TCIS3_SP_Offert383164Intern.91373715.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-0088_TCIS3_SP_Offert383169Intern.91373715.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-0155_TCIS3_SP_Offert383160Intern.91373715.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-0156_TCIS3_SP_Offert383179Intern.91374793.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-0170_TCIS3_SP_Offert383180Intern.91374793.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-0177_TCIS3_SP_Offert383165Intern.91373715.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-0272_TCIS3_SP_Offert383181Intern.91374793.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-0426_TCIS3_SP_Offert383183Intern.91374793.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HF-5054_TCIS3_SP_Offert383182Intern.91374793.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\HO-0340_TCIS3_SP_Offert383184Intern.91374793.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Contracts\PA-0019_TCIS3_SP_Offert383185Intern.91374793.XML">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Data\RailwayBills\eFbDocument_1493199408272.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
