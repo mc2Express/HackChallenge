@@ -39,5 +39,20 @@ namespace ExcelTests
             Assert.AreEqual(67, result.Count);
 
         }
+
+
+
+
+        [TestMethod]
+        public void WagonStatusImportHandlerTest()
+        {
+            var excelImporter = new WagonStatusImportHandler();
+            var path =
+                @"C:\Users\mathi\Desktop\ÖBB Hackathon 22. und 23.06.2017\5_Wagon status message list\Wagen status message list_RTLM-548_Hackathon-Statusmeldungen_additional infos.xlsx";
+            var result = excelImporter.ImportPurchaseContractExcel(path);
+
+            Assert.AreEqual(2591, result.Count);
+
+        }
     }
 }
