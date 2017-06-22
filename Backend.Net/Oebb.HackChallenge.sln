@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTests", "ExcelTests\ExcelTests.csproj", "{E4E903F7-010E-438C-BE80-F042FE8D610E}"
 EndProject
@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessDomain", "BusinessD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Parse", "Infrastructure.Parse\Infrastructure.Parse.csproj", "{C01D4C23-192B-4E67-9FE5-28A7641B3B05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlParseTests", "XmlParseTests\XmlParseTests.csproj", "{C8623E2F-71CF-4B0D-B61A-F9039A3DA645}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestApplication", "ConsoleTestApplication\ConsoleTestApplication.csproj", "{25BFF22A-9A7E-4DFB-9678-3419B9E852B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CargoApi", "CargoApi\CargoApi.csproj", "{A9BFE644-6A05-4005-A79C-1EB6C08FB3D8}"
 EndProject
