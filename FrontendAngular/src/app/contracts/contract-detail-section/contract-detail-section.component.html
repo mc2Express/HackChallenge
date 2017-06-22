@@ -1,0 +1,7 @@
+<!--component html goes here -->
+<div class="section">
+    <div class="section-title" (click)="toggle()">{{title}}</div>
+    <div class="section-body" *ngIf="opened">
+        <ng-content></ng-content>
+    </div>
+</div>

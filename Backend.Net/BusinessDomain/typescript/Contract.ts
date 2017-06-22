@@ -1,9 +1,10 @@
 
 
-module Models {  
+ 
 
     export interface Contract { 
         contractNr: string;
+        spContractDescription: string;
         creationDate: string;
         offertDate: string;
         offertNr: string;
@@ -11,5 +12,5 @@ module Models {
         railwayBills: RailwayBill[];
         invoices: IncomingInvoicesConfirmations[];
         wagons: Wagon[];
-    }
+    
 }

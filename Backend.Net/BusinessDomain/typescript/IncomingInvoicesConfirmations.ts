@@ -1,6 +1,6 @@
 
 
-module Models {  
+ 
 
     export interface IncomingInvoicesConfirmations { 
         invoiceNb: string;
@@ -10,5 +10,5 @@ module Models {
         wagonNb: string;
         executionDate: string;
         attacedDocuments: string;
-    }
+    
 }

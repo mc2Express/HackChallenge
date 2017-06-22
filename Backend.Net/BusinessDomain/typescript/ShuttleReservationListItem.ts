@@ -1,6 +1,6 @@
 
 
-module Models {  
+ 
 
     export interface ShuttleReservationListItem { 
         number: number;
@@ -27,5 +27,5 @@ module Models {
         zug_Abfahrt: string;
         wgLeerRetour: string;
         aufenthaldStunden: string;
-    }
+    
 }

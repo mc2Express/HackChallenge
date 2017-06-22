@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ContractService } from "app/contracts/shared/contract.service";
 import { Contract } from "assets/cargoInterfaces/Cargo";
 
 @Component({
@@ -9,5 +10,13 @@ import { Contract } from "assets/cargoInterfaces/Cargo";
 })
 export class ContractDetailComponent {
 
-    @Input() contract: Contract;
+    constructor(private contractService: ContractService) {}
+
+    public get contract(): Contract {
+        return this.contractService.contract;
+    }
+
+    public close(): void {
+        this.contractService.clearCurrentContract();
+    }
 }

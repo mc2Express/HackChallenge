@@ -1,12 +1,20 @@
 
+
+
+
 export interface Cargo {
     id: string;
     description: string;
     weight: string;
+
 }
+
+
+
 
 export interface Contract {
     contractNr: string;
+    spContractDescription: string;
     creationDate: string;
     offertDate: string;
     offertNr: string;
@@ -14,13 +22,22 @@ export interface Contract {
     railwayBills: RailwayBill[];
     invoices: IncomingInvoicesConfirmations[];
     wagons: Wagon[];
+
 }
+
+
+
 
 
 export interface Country {
-    countryCode: number;
+    countryCode: string;
     name: string;
+
 }
+
+
+
+
 
 export interface IncomingInvoicesConfirmations {
     invoiceNb: string;
@@ -30,7 +47,12 @@ export interface IncomingInvoicesConfirmations {
     wagonNb: string;
     executionDate: string;
     attacedDocuments: string;
+
 }
+
+
+
+
 
 export interface PurchaseContract {
     purchaseContractNb: string;
@@ -42,7 +64,12 @@ export interface PurchaseContract {
     additionalInfos: string;
     fee: string;
     entity: string;
+
 }
+
+
+
+
 
 export interface RailwayBill {
     forwardingNumber: string;
@@ -57,31 +84,11 @@ export interface RailwayBill {
     classOfReservation: string;
     reservationNumber: string;
     wagon: Wagon;
+
 }
 
-export interface Wagon {
-    wagonNumber: string;
-    info: string;
-    totalWeight: string;
-    cargo: Cargo;
-}
 
-export interface WagonStatus {
-    zugNumber: string;
-    date: string;
-    lageBahnhofVerwaltung: string;
-    lageBahnhofNumber: string;
-    lageZeitpunkt: string;
-    status: string;
-    prz: string;
-    wagennr: string;
-    gV_ID: string;
-    unterwegsbehandlungscode: string;
-    storno: string;
-    empfänger: string;
-    lastModified: string;
-    s: string;
-}
+
 
 
 export interface RelationInfo {
@@ -90,8 +97,8 @@ export interface RelationInfo {
     werteFreigegeben: Werteliste[];
     werterKzub: Werteliste[];
     werteUbehVzweNr: Werteliste[];
-}
 
+}
 export interface LookupStatus {
     id: string;
     status: string;
@@ -100,7 +107,25 @@ export interface LookupStatus {
 export interface Werteliste {
     wert: string;
     description: string;
+
 }
+
+
+
+
+
+export interface ShuttleReservation {
+    trainNumber: string;
+    sendDate: string;
+    receiveDate: string;
+    zulaufNachTarvisio: string;
+    items: ShuttleReservationListItem[];
+
+}
+
+
+
+
 
 export interface ShuttleReservationListItem {
     number: number;
@@ -127,6 +152,65 @@ export interface ShuttleReservationListItem {
     zug_Abfahrt: string;
     wgLeerRetour: string;
     aufenthaldStunden: string;
+
+}
+
+
+
+
+
+export interface SupplyChain {
+    contract: Contract[];
+
+}
+
+
+
+
+
+export interface TrainStation {
+    stationId: string;
+    country: Country;
+    name: string;
+
+}
+
+
+
+
+
+
+
+
+
+export interface WagonStatus {
+    zugNumber: string;
+    date: string;
+    lageBahnhofVerwaltung: string;
+    lageBahnhofNumber: string;
+    lageZeitpunkt: string;
+    status: string;
+    prz: string;
+    wagennr: string;
+    gV_ID: string;
+    unterwegsbehandlungscode: string;
+    storno: string;
+    empfänger: string;
+    lastModified: string;
+    s: string;
+
+}
+export interface Wagon {
+    wagonNumber: string;
+    info: string;
+    totalWeight: string;
+    cargo: Cargo;
+    reservation: ShuttleReservationListItem;
+    reservationTrainNumber: string;
+    reservationSendDate: string;
+    reservationReceiveDate: string;
+    wagonStatus: WagonStatus[];
+
 }
 
 
@@ -136,22 +220,5 @@ export interface TransportClass {
     to: TrainStation;
     szVertragNr: string;
     railwayBills: RailwayBill[];
-}
 
-export interface TrainStation {
-    stationId: string;
-    country: Country;
-    name: string;
-}
-
-export interface SupplyChain {
-    contract: Contract[];
-}
-
-export interface ShuttleReservation {
-    trainNumber: string;
-    sendDate: string;
-    receiveDate: string;
-    zulaufNachTarvisio: string;
-    items: ShuttleReservationListItem[];
 }

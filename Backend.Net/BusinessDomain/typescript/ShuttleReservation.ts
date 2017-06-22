@@ -1,6 +1,6 @@
 
 
-module Models {  
+ 
 
     export interface ShuttleReservation { 
         trainNumber: string;
@@ -8,5 +8,5 @@ module Models {
         receiveDate: string;
         zulaufNachTarvisio: string;
         items: ShuttleReservationListItem[];
-    }
+    
 }

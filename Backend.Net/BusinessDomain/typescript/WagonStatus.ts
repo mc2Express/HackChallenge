@@ -1,6 +1,6 @@
 
 
-module Models {  
+ 
 
     export interface WagonStatus { 
         zugNumber: string;
@@ -17,5 +17,5 @@ module Models {
         empfänger: string;
         lastModified: string;
         s: string;
-    }
+    
 }

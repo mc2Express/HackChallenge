@@ -1,3 +1,16 @@
 <!--component html goes here -->
-<td class="col-lg-4">{{contract.contractNr}}</td>
-<td class="col-lg-4"></td>
+<div class="contract-detail" *ngIf="!contract">
+    <div class="header">
+        <div class="title">Vertrag mit Christian Schaiter</div>
+        <div class="subtitle">{{contract?.contractNr}}</div>
+        <div class="close" (click)="close()">x</div>
+    </div>
+    <div class="body-wrapper">
+        <div class="body">
+            <contract-detail-section [title]="'Lieferungen'">
+                <div>dfasdf</div>
+            </contract-detail-section>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>

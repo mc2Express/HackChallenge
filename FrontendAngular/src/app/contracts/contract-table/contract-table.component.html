@@ -1,14 +1,8 @@
 <!--component html goes here -->
-<div class="row" *ngFor="let contract of contracts">
-    <contract-detail [contract]="contract"></contract-detail>
-    
-    <div class="col-lg-6">
-
-    </div>
-    <div class="col-lg-6">
-
-    </div>
+<div *ngFor="let contract of contracts">
+    <contract-row class="row" [contract]="contract"></contract-row>
 </div>
+<contract-detail></contract-detail>
 <!--<table>
     <colgroup>
         <col style="width: 8px"></col>
