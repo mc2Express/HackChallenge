@@ -1,3 +1,11 @@
 <!--component html goes here -->
-<td class="col-lg-4">{{contract.contractNr}}</td>
-<td class="col-lg-4"></td>
+<div class="contract-detail" *ngIf="contract">
+    <div class="header">
+        <div>{{contract.contractId}}</div>
+        <div (click)="close()">x</div>
+    </div>
+    <div class="body-wrapper">
+        <div class="body"asdf></div>
+    </div>
+    <div class="footer"></div>
+</div>

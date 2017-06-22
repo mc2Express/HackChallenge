@@ -1,1 +1,31 @@
-// component css goes here
+.contract-detail {
+    background: blue;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    .header {
+        background: yellow;
+        height: 50px;
+    }
+
+    .body-wrapper {
+        margin: -50px 0 -30px 0;
+        padding: 50px 0 30px 0;
+        height: 100%;
+
+        .body {
+            background: green;
+            height: 100%;
+        }
+    }
+
+    .footer {
+        background: red;
+        height: 30px;
+    }
+}

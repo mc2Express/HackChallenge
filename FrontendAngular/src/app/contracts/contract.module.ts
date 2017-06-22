@@ -6,6 +6,7 @@ import { ContractMapComponent } from './contractMap/contractMap.component';
 import { ContractService } from "app/contracts/shared/contract.service";
 import { ContractTableComponent } from './contract-table/contract-table.component';
 import { NgModule } from '@angular/core';
+import { ContractRowComponent } from "app/contracts/contract-row/contract-row.component";
 
 // This Module's Components
 @NgModule({
@@ -13,12 +14,9 @@ import { NgModule } from '@angular/core';
         CommonModule
     ],
     declarations: [
-        ContractTableComponent,
-        ContractDetailComponent,
-        ContractMapComponent
-    ],
+        ContractTableComponent, ContractRowComponent, ContractDetailComponent,
+        ContractMapComponent ],
     exports: [
-        ContractTableComponent, ContractDetailComponent
     ],
     providers: [ContractService]
 })

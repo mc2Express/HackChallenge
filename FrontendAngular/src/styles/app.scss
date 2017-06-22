@@ -4,3 +4,16 @@
 @import "utils";
 @import "rtl";
 @import "responsive";
+
+html {
+    cursor: default;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    height: 100%;
+}
