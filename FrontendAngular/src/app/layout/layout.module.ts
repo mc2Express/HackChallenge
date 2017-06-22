@@ -1,5 +1,6 @@
 import { HeaderComponent, SidebarComponent } from '../shared';
 
+import { AgmCoreModule } from '@agm/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
@@ -13,7 +14,10 @@ import { TranslateModule } from '@ngx-translate/core';
         CommonModule,
         NgbDropdownModule.forRoot(),
         LayoutRoutingModule,
-        TranslateModule
+        TranslateModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDCDbfOm-duBaHtjjhI9qT8MFc7p4Telt4'
+        })
     ],
     declarations: [
         LayoutComponent,

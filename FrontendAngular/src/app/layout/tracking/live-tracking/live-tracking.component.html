@@ -1,5 +1,15 @@
 <h2 class="text-muted">Tracking <small>Übersicht CARGO</small></h2>
 
-<div>
-Übersichts Karte Europa
+<div class="row">
+  <div class="col-md-12">
+    <agm-map s [latitude]=" 46.60856" [longitude]="13.85062" [zoom]=7>
+      <agm-marker
+         [latitude]="51.678418"
+          [longitude]="7.809007"
+          [label]="mlabel"
+      > </agm-marker>
+ 
+
+    </agm-map>
+  </div>
 </div>
