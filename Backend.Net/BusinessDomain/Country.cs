@@ -1,9 +1,9 @@
 ﻿namespace BusinessDomain
 {
-    public sealed class Country : IDomainObject
-    {
-        public int CountryCode { get; set; }
+	public sealed class Country : IDomainObject
+	{
+		public string CountryCode { get; set; }
 
-        public string Name { get; set; }
-    }
+		public string Name { get; set; }
+	}
 }

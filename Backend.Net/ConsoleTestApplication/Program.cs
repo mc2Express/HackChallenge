@@ -1,5 +1,5 @@
 ﻿using System;
-using Infrastructure.Parse.Impl;
+using Infrastructure.Parse;
 
 namespace ConsoleTestApplication
 {
@@ -7,9 +7,9 @@ namespace ConsoleTestApplication
 	{
 		static void Main(string[] args)
 		{
-			var parser = new ContractParser();
+			var importer = new HackChallengeDataImporter();
 
-			var result = parser.Parse("C:\\temp\\test.xml");
+			var result = importer.GetHackChallangeData();
 			Console.WriteLine("blub");
 		}
 	}

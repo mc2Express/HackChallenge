@@ -17,10 +17,10 @@ namespace BusinessDomain
 		public IEnumerable<TransportClass> TransportClasses { get; set; }
 
 		// referenced data; cannot be parsed
-		public IEnumerable<RailwayBill> RailwayBills { get; set; }
+		public IList<RailwayBill> RailwayBills { get; set; }
 
-        public IEnumerable<IncomingInvoicesConfirmations> Invoices { get; set; }
+		public IList<IncomingInvoicesConfirmations> Invoices { get; set; }
 
-        public IEnumerable<Wagon> Wagons { get; set; }
+		public IList<Wagon> Wagons { get; set; }
 	}
 }
