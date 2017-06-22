@@ -1,6 +1,6 @@
 
 
-module Models {  
+ 
 
     export interface PurchaseContract { 
         purchaseContractNb: string;
@@ -12,5 +12,5 @@ module Models {
         additionalInfos: string;
         fee: string;
         entity: string;
-    }
+    
 }

@@ -1,6 +1,6 @@
 
 
-module Models {  
+ 
 
     export interface RailwayBill { 
         forwardingNumber: string;
@@ -15,5 +15,5 @@ module Models {
         classOfReservation: string;
         reservationNumber: string;
         wagon: Wagon;
-    }
+    
 }

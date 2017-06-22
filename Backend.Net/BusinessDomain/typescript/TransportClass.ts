@@ -1,6 +1,6 @@
 
 
-module Models {  
+ 
 
     export interface TransportClass { 
         from: TrainStation;
@@ -8,5 +8,5 @@ module Models {
         to: TrainStation;
         szVertragNr: string;
         railwayBills: RailwayBill[];
-    }
+    
 }
