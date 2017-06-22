@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+/Backend.Net/packages
+/Backend.Net/.vs
+/Backend.Net/WebApi/bin
+/Backend.Net/WebApi/obj/Debug
