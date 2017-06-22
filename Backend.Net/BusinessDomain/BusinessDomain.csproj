@@ -55,6 +55,8 @@
     <Compile Include="Cargo.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="ExportContract.cs" />
+    <Compile Include="ExportJson.cs" />
     <Compile Include="IDomainObject.cs" />
     <Compile Include="IncomingInvoicesConfirmations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

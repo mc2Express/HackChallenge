@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using BusinessDomain;
 using Infrastructure.Parse.Impl;
+using Newtonsoft.Json;
 
 namespace Infrastructure.Parse
 {
@@ -58,7 +59,14 @@ namespace Infrastructure.Parse
 				invoices.AddRange(invoiceParser.Parse(file));
 			}
 
-			return EnrichData(contracts, railwayBills, shuttleReservations, wagonStatus, purchaseContracts, invoices);
+			RelationInfo relationInfos;
+			var relationsParser = new RelationInfoParser();
+			relationInfos =
+				relationsParser.Parse(
+					@"C:\Dev\HackChallenge\Backend.Net\Data\WagonStatus\Wagen status message list_RTLM-548_Hackathon-Statusmeldungen_additional infos.xlsx");
+
+			return EnrichData(contracts, railwayBills, shuttleReservations, wagonStatus, purchaseContracts, invoices,
+				relationInfos);
 		}
 
 		private IEnumerable<Contract> EnrichData(IEnumerable<Contract> contracts,
@@ -66,7 +74,8 @@ namespace Infrastructure.Parse
 			IEnumerable<ShuttleReservation> shuttleReservations,
 			IEnumerable<WagonStatus> wagonStatus,
 			IEnumerable<PurchaseContract> purchaseContracts,
-			IEnumerable<IncomingInvoicesConfirmations> invoices)
+			IEnumerable<IncomingInvoicesConfirmations> invoices,
+			RelationInfo relationInfos)
 		{
 			// first, match the containing railwayBills to the contracts
 			foreach (var railwayBill in railwayBills)
@@ -126,6 +135,25 @@ namespace Infrastructure.Parse
 				}
 			}
 
+			//todo relationInfos
+
+			var jsonFile = JsonConvert.SerializeObject(contracts);
+			File.WriteAllText(@"C:\temp\fullJson.json", jsonFile);
+
+			var outputJson = new ExportJson();
+			outputJson.contracts = contracts.ToDictionary(x => x.ContractNr, x => new ExportContract
+			{
+				efbs = x.RailwayBills == null ? new string[] {} : x.RailwayBills?.Select(y => y.GvId).ToArray(),
+				invoices = x.Invoices == null ? new string[] {} : x.Invoices?.Select(y => y.InvoiceNb).Distinct().ToArray(),
+				wagons = x.Wagons == null
+					? new Dictionary<string, string[]>()
+					: x.Wagons?.ToDictionary(y => y.WagonNumber.Replace(" ", "").Replace("-", ""),
+						y => y.WagonStatus.Where(z => z != null).Select(z => z.TimestampId).ToArray())
+			});
+
+			var exportJsonFile = JsonConvert.SerializeObject(outputJson);
+			File.WriteAllText(@"C:\temp\jsonExport.json", exportJsonFile);
+
 
 			return contracts;
 		}
@@ -137,9 +165,10 @@ namespace Infrastructure.Parse
 			return nr11 != null && nr11 == nr22;
 		}
 
-		private bool WagonMatches11(string nr1, string nr2) {
-			var nr11 = nr1?.Replace(" ", "")?.Replace("-", "")?.Substring(0,11);
-			var nr22 = nr2?.Replace(" ", "")?.Replace("-", "")?.Substring(0,11);
+		private bool WagonMatches11(string nr1, string nr2)
+		{
+			var nr11 = nr1?.Replace(" ", "")?.Replace("-", "")?.Substring(0, 11);
+			var nr22 = nr2?.Replace(" ", "")?.Replace("-", "")?.Substring(0, 11);
 			return nr11 != null && nr11 == nr22;
 		}
 	}

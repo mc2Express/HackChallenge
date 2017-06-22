@@ -14,6 +14,14 @@ namespace BusinessDomain
 
 		public string OffertNr { get; set; }
 
+		public string OffertTextIntern { get; set; }
+
+		public string OffertOrganisation { get; set; }
+
+		public string SumWagen { get; set; }
+
+		public string SumTonnen { get; set; }
+
 		public IEnumerable<TransportClass> TransportClasses { get; set; }
 
 		// referenced data; cannot be parsed
