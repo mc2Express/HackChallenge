@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { LayoutComponent } from './layout.component';
+import { LiveTrackingComponent } from './tracking/live-tracking/live-tracking.component';
+import { NgModule } from '@angular/core';
 
 const routes: Routes = [
     {
@@ -14,6 +16,7 @@ const routes: Routes = [
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
+            { path: 'tracking', component: LiveTrackingComponent },            
         ]
     }
 ];

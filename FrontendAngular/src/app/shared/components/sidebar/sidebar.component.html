@@ -3,7 +3,10 @@
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'dashboard' | translate }}
         </a>
-        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+         <a routerLink="/tracking" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-map-signs"></i>&nbsp;{{ 'Tracking' | translate }}
+        </a>
+        <!--<a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'charts' | translate }}
         </a>
         <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
@@ -45,5 +48,6 @@
         <a class="list-group-item more-themes" href="http://www.strapui.com/" >
             {{ 'moretheme' | translate }}
         </a>
+        -->
     </ul>
 </nav>

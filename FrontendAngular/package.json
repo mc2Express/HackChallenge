@@ -1,7 +1,6 @@
 {
-  "name": "sb-admin-angular4-bootstrap4",
+  "name": "mc2-express",
   "version": "1.0.0",
-  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --ec=true",
