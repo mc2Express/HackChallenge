@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BusinessDomain
 {
-    public sealed class Contract : IDomainObject
-    {
-        public int ContractNr { get; set; }
+	public sealed class Contract : IDomainObject
+	{
+		public string ContractNr { get; set; }
 
-        public DateTime ContractDate { get; set; }
+		public string CreationDate { get; set; }
 
-        public TrainStation From { get; set; }
+		public string OffertDate { get; set; }
 
-        public TrainStation Via { get; set; }
+		public string OffertNr { get; set; }
 
-        public TrainStation To { get; set; }
-    }
+		public List<TransportClass> TransportClasses { get; set; }
+
+		// recerenced data; cannot be parsed
+		public List<RailwayBill> RailwayBills { get; set; }
+	}
 }
