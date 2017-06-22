@@ -147,22 +147,22 @@ namespace Infrastructure.Parse
 
 			//todo relationInfos
 
-			var jsonFile = JsonConvert.SerializeObject(contracts);
-			File.WriteAllText(@"C:\temp\fullJson.json", jsonFile);
+			//var jsonFile = JsonConvert.SerializeObject(contracts);
+			//File.WriteAllText(@"C:\temp\fullJson.json", jsonFile);
 
-			var outputJson = new ExportJson();
-			outputJson.contracts = contracts.ToDictionary(x => x.ContractNr, x => new ExportContract
-			{
-				efbs = x.RailwayBills == null ? new string[] {} : x.RailwayBills?.Select(y => y.GvId).ToArray(),
-				invoices = x.Invoices == null ? new string[] {} : x.Invoices?.Select(y => y.InvoiceNb).Distinct().ToArray(),
-				wagons = x.Wagons == null
-					? new Dictionary<string, string[]>()
-					: x.Wagons?.ToDictionary(y => y.WagonNumber.Replace(" ", "").Replace("-", ""),
-						y => y.WagonStatus.Where(z => z != null).Select(z => z.TimestampId).ToArray())
-			});
+			//var outputJson = new ExportJson();
+			//outputJson.contracts = contracts.ToDictionary(x => x.ContractNr, x => new ExportContract
+			//{
+			//	efbs = x.RailwayBills == null ? new string[] {} : x.RailwayBills?.Select(y => y.GvId).ToArray(),
+			//	invoices = x.Invoices == null ? new string[] {} : x.Invoices?.Select(y => y.InvoiceNb).Distinct().ToArray(),
+			//	wagons = x.Wagons == null
+			//		? new Dictionary<string, string[]>()
+			//		: x.Wagons?.ToDictionary(y => y.WagonNumber.Replace(" ", "").Replace("-", ""),
+			//			y => y.WagonStatus.Where(z => z != null).Select(z => z.TimestampId).ToArray())
+			//});
 
-			var exportJsonFile = JsonConvert.SerializeObject(outputJson);
-			File.WriteAllText(@"C:\temp\jsonExport.json", exportJsonFile);
+			//var exportJsonFile = JsonConvert.SerializeObject(outputJson);
+			//File.WriteAllText(@"C:\temp\jsonExport.json", exportJsonFile);
 
 
 			return contracts;
