@@ -30,5 +30,17 @@ namespace ExcelTests
             Assert.AreEqual(16, result.Count);
 
         }
+
+        [TestMethod]
+        public void IncomingInvoicesConfirmationsImportHandlerTest()
+        {
+            var excelImporter = new IncomingInvoicesConfirmationsImportHandler();
+            var path =
+                @"C:\Users\mathi\Desktop\ÖBB Hackathon 22. und 23.06.2017\6_Incoming external invoices from LugoTerminal\Incoming invoices_confirmation of supplier LugoTerminal_Excel.xlsx";
+            var result = excelImporter.ImportIncomingInvoices(path);
+
+            Assert.AreEqual(67, result.Count);
+
+        }
     }
 }

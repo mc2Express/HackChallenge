@@ -23,7 +23,7 @@ namespace WebApi.ExcelImport
 
             var results = new List<ShuttleReservationDto>();
 
-            Parallel.ForEach(excel.GetWorksheetNames(), worksheetName =>
+            foreach (var worksheetName in excel.GetWorksheetNames())
             {
                 var result = from trainNumber in excel.WorksheetRangeNoHeader("E3", "E3", worksheetName).First()
                     from receiveDate in excel.WorksheetRangeNoHeader("E6", "E6", worksheetName).First()
@@ -39,7 +39,7 @@ namespace WebApi.ExcelImport
                             .ToList()
                     };
                 results.AddRange(result);
-            });
+            };
 
             return results;
 

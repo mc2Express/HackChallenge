@@ -95,11 +95,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ExcelImport\IncomingInvoicesConfirmationsImportHandler.cs" />
     <Compile Include="ExcelImport\ShuttleReservationImportHandler.cs" />
     <Compile Include="ExcelImport\PurchaseContractImportHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\IncomingInvoicesConfirmationsDto.cs" />
     <Compile Include="Models\ShuttleReservationDto.cs" />
     <Compile Include="Models\PurchaseContractDto.cs" />
     <Compile Include="Models\ShuttleReservationListItemDto.cs" />
