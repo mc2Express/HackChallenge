@@ -20,7 +20,19 @@ namespace Infrastructure.Parse.Impl
 					xmlDoc.Descendants("SP_VERTRAG").FirstOrDefault()?.Descendants("BEZEICHNUNG").FirstOrDefault()?.Value,
 				CreationDate = xmlDoc.Descendants("ERST_DATUM").FirstOrDefault()?.Value,
 				OffertDate = xmlDoc.Descendants("DATUM").FirstOrDefault()?.Value,
-				OffertNr = xmlDoc.Descendants("OFFERT_NR").FirstOrDefault()?.Value
+				OffertNr = xmlDoc.Descendants("OFFERT_NR").FirstOrDefault()?.Value,
+				OffertOrganisation = xmlDoc.Descendants("ORGANISATION").FirstOrDefault()?.Value ?? "",
+				OffertTextIntern = xmlDoc.Descendants("TXT").FirstOrDefault()?.Value ?? "",
+				SumWagen =
+					xmlDoc.Descendants("STF_SUM")
+						.FirstOrDefault()?.Descendants("SUM_WAGEN")?.FirstOrDefault()
+						.Descendants("WERT")
+						.FirstOrDefault()?.Value ?? "",
+				SumTonnen =
+					xmlDoc.Descendants("STF_SUM")
+						.FirstOrDefault()?.Descendants("SUM_TONNEN")?.FirstOrDefault()
+						.Descendants("WERT")
+						.FirstOrDefault()?.Value ?? ""
 			};
 			return contract;
 		}
