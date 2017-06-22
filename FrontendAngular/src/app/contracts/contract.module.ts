@@ -8,16 +8,16 @@ import { ContractTableComponent } from './contract-table/contract-table.componen
 import { NgModule } from '@angular/core';
 import { ContractRowComponent } from "app/contracts/contract-row/contract-row.component";
 import { ContractDetailSectionComponent } from "app/contracts/contract-detail-section/contract-detail-section.component";
+import { RailwayBillsComponent } from "app/contracts/railway-bills/railway-bills.component";
 
 // This Module's Components
 @NgModule({
     imports: [
         CommonModule
     ],
-
     declarations: [
         ContractTableComponent, ContractRowComponent, ContractDetailComponent, ContractDetailSectionComponent,
-        ContractMapComponent
+        RailwayBillsComponent, ContractMapComponent
     ],
     exports: [
         ContractTableComponent

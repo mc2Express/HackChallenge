@@ -1,16 +1,9 @@
-
-
-
-
 export interface Cargo {
     id: string;
     description: string;
     weight: string;
 
 }
-
-
-
 
 export interface Contract {
     contractNr: string;
@@ -25,19 +18,10 @@ export interface Contract {
 
 }
 
-
-
-
-
 export interface Country {
     countryCode: string;
     name: string;
-
 }
-
-
-
-
 
 export interface IncomingInvoicesConfirmations {
     invoiceNb: string;
@@ -47,7 +31,6 @@ export interface IncomingInvoicesConfirmations {
     wagonNb: string;
     executionDate: string;
     attacedDocuments: string;
-
 }
 
 
@@ -210,9 +193,7 @@ export interface Wagon {
     reservationSendDate: string;
     reservationReceiveDate: string;
     wagonStatus: WagonStatus[];
-
 }
-
 
 export interface TransportClass {
     from: TrainStation;
@@ -220,5 +201,4 @@ export interface TransportClass {
     to: TrainStation;
     szVertragNr: string;
     railwayBills: RailwayBill[];
-
 }

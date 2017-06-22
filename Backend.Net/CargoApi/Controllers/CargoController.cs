@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BusinessDomain;
 using Infrastructure.Parse;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace CargoApi.Controllers
 {
@@ -25,7 +26,11 @@ namespace CargoApi.Controllers
 
         public ActionResult Index()
         {
-            var json = JsonConvert.SerializeObject(contracts);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver() 
+            };
+            var json = JsonConvert.SerializeObject(contracts, settings);
             return Content(json, "application/json");
         }
 
