@@ -1,25 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
-using System.Data.OleDb;
-using System.IO;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+using BusinessDomain;
 using LinqToExcel;
-using WebApi.Models;
 
-namespace WebApi.ExcelImport
+namespace Infrastructure.Parse.Impl
 {
     public class ShuttleReservationImportHandler
     {
-        public ShuttleReservationImportHandler()
-        {
-        }
-
         public IList<ShuttleReservationDto> ImportShuttleReservations(string path){
-            var excel = new ExcelQueryFactory(path);
-            excel.ReadOnly = true;
+            var excel = new ExcelQueryFactory(path) {ReadOnly = true};
 
             var results = new List<ShuttleReservationDto>();
 
@@ -35,16 +24,12 @@ namespace WebApi.ExcelImport
                         ReceiveDate = receiveDate,
                         SendDate = sendDate,
                         ZulaufNachTarvisio = zulaufNachTarvisio,
-                        Items = excel.WorksheetRange<ShuttleReservationListItemDto>("A11", "AB512", worksheetName)
-                            .ToList()
+                        Items = Enumerable.ToList(excel.WorksheetRange<ShuttleReservationListItemDto>("A11", "AB512", worksheetName))
                     };
                 results.AddRange(result);
             };
 
             return results;
-
         }
-
-
     }
 }

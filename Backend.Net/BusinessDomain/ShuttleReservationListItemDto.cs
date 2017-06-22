@@ -1,6 +1,6 @@
 ﻿using LinqToExcel.Attributes;
 
-namespace WebApi.Models
+namespace BusinessDomain
 {
     public class ShuttleReservationListItemDto
     {

@@ -10,7 +10,11 @@ namespace WebApi.Controllers
     {
         public ActionResult Index()
         {
-            return Content("Hallo vom Server");
+            return Content(@"
+{
+    
+}"
+                           );
         }
     }
 }

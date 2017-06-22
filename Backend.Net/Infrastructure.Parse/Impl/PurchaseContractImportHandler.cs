@@ -1,30 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
-using System.Data.OleDb;
-using System.IO;
 using System.Linq;
+using BusinessDomain;
 using LinqToExcel;
-using WebApi.Models;
 
-namespace WebApi.ExcelImport
+namespace Infrastructure.Parse.Impl
 {
     public class PurchaseContractImportHandler
     {
-        public PurchaseContractImportHandler()
-        {
-        }
-
         public IList<PurchaseContractDto> ImportPurchaseContractExcel(string path){
-            var excel = new ExcelQueryFactory(path);
-            excel.ReadOnly = true;
+            var excel = new ExcelQueryFactory(path) {ReadOnly = true};
 
             var result = from c in excel.Worksheet<PurchaseContractDto>(0)
                 select c;
 
             return result.ToList();
         }
-
-
     }
 }

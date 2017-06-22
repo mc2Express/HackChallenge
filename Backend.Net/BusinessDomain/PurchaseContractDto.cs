@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using LinqToExcel.Attributes;
+﻿using LinqToExcel.Attributes;
 
-namespace WebApi.Models
+namespace BusinessDomain
 {
     public class PurchaseContractDto
     {
@@ -35,7 +31,5 @@ namespace WebApi.Models
 
         [ExcelColumn("entity")]
         public string Entity { get; set; }
-
-
     }
 }

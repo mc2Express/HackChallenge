@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using LinqToExcel.Attributes;
+﻿using LinqToExcel.Attributes;
 
-namespace WebApi.Models
+namespace BusinessDomain
 {
-    public class IncomingInvoicesConfirmationsDto
+    public class IncomingInvoicesConfirmations
     {
 
-            [ExcelColumn("Invoice nb")]
+        [ExcelColumn("Invoice nb")]
         public string InvoiceNb { get; set; }
         
         [ExcelColumn("date of invoice")]
@@ -29,7 +25,5 @@ namespace WebApi.Models
 
         [ExcelColumn("attached documents")]
         public string AttacedDocuments { get; set; }
-
-
     }
 }

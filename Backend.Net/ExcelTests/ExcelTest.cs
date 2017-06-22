@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Infrastructure.Parse.Impl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebApi.ExcelImport;
 
 namespace ExcelTests
 {
@@ -16,7 +15,6 @@ namespace ExcelTests
             var result = excelImporter.ImportPurchaseContractExcel(path);
 
             Assert.AreEqual(24, result.Count);
-
         }
 
         [TestMethod]
@@ -28,7 +26,6 @@ namespace ExcelTests
              var result = excelImporter.ImportShuttleReservations(path);
 
             Assert.AreEqual(16, result.Count);
-
         }
 
         [TestMethod]
