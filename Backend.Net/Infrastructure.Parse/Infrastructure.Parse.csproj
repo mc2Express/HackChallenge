@@ -53,6 +53,7 @@
     <Compile Include="Impl\PurchaseContractParser.cs" />
     <Compile Include="Impl\RailwayBillParser.cs" />
     <Compile Include="Impl\ShuttleReservationParser.cs" />
+    <Compile Include="Impl\RelationInfoParser.cs" />
     <Compile Include="Impl\WagonStatusParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
