@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusinessDomain
+﻿namespace BusinessDomain
 {
     public sealed class TrainStation
     {
-        public int StationNumber { get; set; }
+        public string StationId { get; set; }
 
         public Country Country { get; set; }
 

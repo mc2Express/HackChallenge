@@ -360,3 +360,4 @@ __pycache__/
 
 bin/
 obj/
+/Backend.Net/Infrastructure.Parse/Data/
