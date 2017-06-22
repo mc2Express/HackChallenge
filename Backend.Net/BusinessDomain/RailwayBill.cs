@@ -5,7 +5,7 @@ namespace BusinessDomain
 {
     public sealed class RailwayBill : IDomainObject
     {
-        public int ForwaringNumber { get; set; }
+        public string ForwardingNumber { get; set; }
 
         // public int Evu { get; set; }
 
@@ -13,17 +13,19 @@ namespace BusinessDomain
 
         public TrainStation TakeOverStation { get; set; }
 
-        public DateTime TakeOverDate { get; set; }
-
         public TrainStation ReceivingStation { get; set; }
 
-        public DateTime IssueDate { get; set; }
+        public TrainStation DeliveryStation { get; set; }
+        
+        public string TakeOverDate { get; set; }
+
+        public string IssueDate { get; set; }
 
         public string IssueLocation { get; set; }
 
         public IEnumerable<string> Descriptions { get; set; }
 
-        public int ClassOfReservation { get; set; }
+        public string ClassOfReservation { get; set; }
 
         public string ReservationNumber { get; set; }
 

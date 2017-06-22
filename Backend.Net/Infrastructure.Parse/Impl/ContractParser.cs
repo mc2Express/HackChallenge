@@ -5,7 +5,7 @@ using BusinessDomain;
 
 namespace Infrastructure.Parse.Impl
 {
-	public class ContractParser : BaseXmlParser, IDocumentParser<Contract>
+	public class ContractParser : IDocumentParser<Contract>
 	{
 		public Contract Parse(string documentPath)
 		{
@@ -40,8 +40,7 @@ namespace Infrastructure.Parse.Impl
 							Convert.ToInt32(from?.Descendants("LAND").FirstOrDefault()?.Value),
 						Name = from?.Descendants("LAND_NAME").FirstOrDefault()?.Value
 					},
-					StationNumber =
-						Convert.ToInt32(from?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value),
+					StationId = from?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value,
 					Name = from?.Descendants("BHF").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value
 				},
 				To = new TrainStation
@@ -52,8 +51,7 @@ namespace Infrastructure.Parse.Impl
 							Convert.ToInt32(to?.Descendants("LAND").FirstOrDefault()?.Value),
 						Name = to?.Descendants("LAND_NAME").FirstOrDefault()?.Value
 					},
-					StationNumber =
-						Convert.ToInt32(to?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value),
+					StationId = to?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value,
 					Name = to?.Descendants("BHF").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value
 				},
 				Via = new TrainStation
@@ -64,16 +62,11 @@ namespace Infrastructure.Parse.Impl
 							Convert.ToInt32(via?.Descendants("LAND").FirstOrDefault()?.Value),
 						Name = via?.Descendants("LAND_NAME").FirstOrDefault()?.Value
 					},
-					StationNumber =
-						Convert.ToInt32(via?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value),
+					StationId = via?.Descendants("BHF").FirstOrDefault()?.Descendants("NR").FirstOrDefault()?.Value,
 					Name = via?.Descendants("BHF").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value
 				},
 				SzVertragNr = tx.Descendants("SZ_VERTRAG_NR").FirstOrDefault()?.Value
 			};
 		}
-	}
-
-	public abstract class BaseXmlParser
-	{
 	}
 }

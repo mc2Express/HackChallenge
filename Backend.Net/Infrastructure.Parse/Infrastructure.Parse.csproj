@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IDocumentParser.cs" />
     <Compile Include="Impl\ContractParser.cs" />
+    <Compile Include="Impl\RailwayBillParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +50,9 @@
       <Project>{81454E9C-0BDD-45AB-83FB-354CC2FBDC14}</Project>
       <Name>BusinessDomain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\RailwayBills\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
