@@ -1,0 +1,7 @@
+{
+    "/cargo/*": {
+        "target": "http://localhost:49994",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

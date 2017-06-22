@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --ec=true",
+    "start": "ng serve --ec=true --proxy-config proxy.conf.json",
     "build": "ng build --prod",
     "gitbuild": "ng build --prod --base='/start-angular/SB-Admin-BS4-Angular-4/master/dist/'",
     "test": "ng test",
