@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessDomain
 {
-    public sealed class Contract
+    public sealed class Contract : IDomainObject
     {
         public int ContractNr { get; set; }
 

@@ -7,7 +7,7 @@ using BusinessDomain;
 
 namespace Infrastructure.Parse
 {
-    interface IDocumentParser<out T> where T : IDomainObject
+    public interface IDocumentParser<out T> where T : IDomainObject
     {
         T Parse(string documentPath);
     }

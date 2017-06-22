@@ -59,5 +59,6 @@ typings/
 
 /Backend.Net/packages
 /Backend.Net/.vs
-/Backend.Net/WebApi/bin
-/Backend.Net/WebApi/obj/Debug
+
+bin/
+obj/
