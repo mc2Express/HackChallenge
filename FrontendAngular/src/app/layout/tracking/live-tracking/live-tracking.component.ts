@@ -1,3 +1,4 @@
+import { Cargo, Contract } from '../../../../assets/cargoInterfaces/Cargo';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,10 @@ export class LiveTrackingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
   }
+
+
 
 } 
