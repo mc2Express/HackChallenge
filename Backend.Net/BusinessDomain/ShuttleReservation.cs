@@ -2,7 +2,7 @@
 
 namespace BusinessDomain
 {
-    public class ShuttleReservationDto
+    public class ShuttleReservation
     {
         
         public string TrainNumber { get; set; }
@@ -11,6 +11,6 @@ namespace BusinessDomain
         public string ReceiveDate { get; set; }
         public string ZulaufNachTarvisio { get; set; }
 
-        public IEnumerable<ShuttleReservationListItemDto> Items { get; set; }
+        public IEnumerable<ShuttleReservationListItem> Items { get; set; }
     }
 }

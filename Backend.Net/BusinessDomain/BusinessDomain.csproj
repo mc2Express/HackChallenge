@@ -58,14 +58,15 @@
     <Compile Include="IDomainObject.cs" />
     <Compile Include="IncomingInvoicesConfirmations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurchaseContractDto.cs" />
+    <Compile Include="PurchaseContract.cs" />
     <Compile Include="RailwayBill.cs" />
-    <Compile Include="ShuttleReservationDto.cs" />
-    <Compile Include="ShuttleReservationListItemDto.cs" />
+    <Compile Include="ShuttleReservation.cs" />
+    <Compile Include="ShuttleReservationListItem.cs" />
     <Compile Include="SupplyChain.cs" />
     <Compile Include="TrainStation.cs" />
     <Compile Include="TransportClass.cs" />
     <Compile Include="Wagon.cs" />
+    <Compile Include="WagonStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

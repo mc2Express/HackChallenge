@@ -2,7 +2,7 @@
 
 namespace BusinessDomain
 {
-    public class ShuttleReservationListItemDto
+    public class ShuttleReservationListItem
     {
 
         [ExcelColumn("Fortl.Nr.")]

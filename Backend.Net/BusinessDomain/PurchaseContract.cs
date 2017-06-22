@@ -2,7 +2,7 @@
 
 namespace BusinessDomain
 {
-    public class PurchaseContractDto
+    public class PurchaseContract
     {
 
             [ExcelColumn("purchase contract nb")]
