@@ -1,9 +1,9 @@
 
 
-module Models {  
+ 
 
     export interface Country { 
-        countryCode: number;
+        countryCode: string;
         name: string;
-    }
+    
 }

@@ -63,10 +63,6 @@
       <Project>{C01D4C23-192B-4E67-9FE5-28A7641B3B05}</Project>
       <Name>Infrastructure.Parse</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebApi\WebApi.csproj">
-      <Project>{379BE421-9D48-446B-8CD2-6890414D0539}</Project>
-      <Name>WebApi</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

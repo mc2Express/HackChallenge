@@ -362,3 +362,4 @@ __pycache__/
 bin/
 obj/
 /Backend.Net/Infrastructure.Parse/Data/
+/Backend.Net/CargoApi/Data/

@@ -5,9 +5,9 @@
 }
 }
 
-module Models { $Classes(*)[ 
+$Classes(*)[ 
 
     export interface $Name$TypeParameters { $Properties[
         $name: $Type;]
-    }]
+    ]
 }
