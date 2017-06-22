@@ -7,16 +7,20 @@ import { ContractService } from "app/contracts/shared/contract.service";
 import { ContractTableComponent } from './contract-table/contract-table.component';
 import { NgModule } from '@angular/core';
 import { ContractRowComponent } from "app/contracts/contract-row/contract-row.component";
+import { ContractDetailSectionComponent } from "app/contracts/contract-detail-section/contract-detail-section.component";
 
 // This Module's Components
 @NgModule({
     imports: [
         CommonModule
     ],
+
     declarations: [
-        ContractTableComponent, ContractRowComponent, ContractDetailComponent,
-        ContractMapComponent ],
+        ContractTableComponent, ContractRowComponent, ContractDetailComponent, ContractDetailSectionComponent,
+        ContractMapComponent
+    ],
     exports: [
+        ContractTableComponent
     ],
     providers: [ContractService]
 })
