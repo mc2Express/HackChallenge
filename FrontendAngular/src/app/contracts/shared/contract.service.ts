@@ -4,12 +4,13 @@ import 'rxjs/add/observable/throw';
 
 import { Contract } from "assets/cargoInterfaces/Cargo";
 import { Http } from "@angular/http";
+import { ILongitutaAttitute } from './ILongitutaAttitute';
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class ContractService {
-    
+
     public contract: Contract;
 
     constructor(private http: Http) { }
@@ -29,13 +30,13 @@ export class ContractService {
         // ])
 
         return this.http
-          .get(`/cargo/Index`)
-          .map((r: any) => r.json() as Contract[])
-          .catch((error: any) => {
-              console.error('An friendly error occurred', error);
-              return Observable.throw(error.message || error);
-          });
-    
+            .get(`/cargo/Index`)
+            .map((r: any) => r.json() as Contract[])
+            .catch((error: any) => {
+                console.error('An friendly error occurred', error);
+                return Observable.throw(error.message || error);
+            });
+
     }
 
     public setCurrentContract(contract: Contract): void {
@@ -44,5 +45,17 @@ export class ContractService {
 
     public clearCurrentContract(): void {
         this.contract = undefined;
+    }
+
+    public getCoordinatsForName(name: string): Observable<ILongitutaAttitute> {
+    return this.http
+            .get(`  http://maps.googleapis.com/maps/api/geocode/json?address=${name}`)
+            .map((r: any) => r.json().results[0].geometry.location)
+            .catch((error: any) => {
+                console.error('An friendly error occurred', error);
+                return Observable.throw(error.message || error);
+            });
+
+
     }
 }
