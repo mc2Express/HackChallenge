@@ -14,9 +14,13 @@ namespace BusinessDomain
 
 		public string OffertNr { get; set; }
 
-		public List<TransportClass> TransportClasses { get; set; }
+		public IEnumerable<TransportClass> TransportClasses { get; set; }
 
-		// recerenced data; cannot be parsed
-		public List<RailwayBill> RailwayBills { get; set; }
+		// referenced data; cannot be parsed
+		public IEnumerable<RailwayBill> RailwayBills { get; set; }
+
+        public IEnumerable<IncomingInvoicesConfirmations> Invoices { get; set; }
+
+        public IEnumerable<Wagon> Wagons { get; set; }
 	}
 }

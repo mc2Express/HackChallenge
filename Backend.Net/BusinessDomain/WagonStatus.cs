@@ -1,9 +1,9 @@
 ﻿
 using LinqToExcel.Attributes;
 
-namespace WebApi.Models
+namespace BusinessDomain
 {
-    public class WagonStatusDto{
+    public class WagonStatus{
 
         [ExcelColumn("ZUGNR")]
         public string ZugNumber { get; set; }

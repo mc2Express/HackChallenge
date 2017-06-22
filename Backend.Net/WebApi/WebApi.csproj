@@ -95,22 +95,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="ExcelImport\IncomingInvoicesConfirmationsImportHandler.cs" />
-    <Compile Include="ExcelImport\WagonStatusImportHandler.cs" />
-    <Compile Include="ExcelImport\ShuttleReservationImportHandler.cs" />
-    <Compile Include="ExcelImport\PurchaseContractImportHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IncomingInvoicesConfirmationsDto.cs" />
-    <Compile Include="Models\ShuttleReservationDto.cs" />
-    <Compile Include="Models\PurchaseContractDto.cs" />
-    <Compile Include="Models\ShuttleReservationListItemDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Compile Include="Models\WagonStatus.cs" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -121,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ExcelImport\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

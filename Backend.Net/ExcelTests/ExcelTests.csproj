@@ -55,6 +55,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessDomain\BusinessDomain.csproj">
+      <Project>{81454E9C-0BDD-45AB-83FB-354CC2FBDC14}</Project>
+      <Name>BusinessDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Parse\Infrastructure.Parse.csproj">
+      <Project>{C01D4C23-192B-4E67-9FE5-28A7641B3B05}</Project>
+      <Name>Infrastructure.Parse</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebApi\WebApi.csproj">
       <Project>{379BE421-9D48-446B-8CD2-6890414D0539}</Project>
       <Name>WebApi</Name>

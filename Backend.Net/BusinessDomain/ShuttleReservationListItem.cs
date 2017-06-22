@@ -1,8 +1,8 @@
 ﻿using LinqToExcel.Attributes;
 
-namespace WebApi.Models
+namespace BusinessDomain
 {
-    public class ShuttleReservationListItemDto
+    public class ShuttleReservationListItem
     {
 
         [ExcelColumn("Fortl.Nr.")]
