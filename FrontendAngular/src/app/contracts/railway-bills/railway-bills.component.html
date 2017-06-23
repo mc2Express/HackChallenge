@@ -4,9 +4,11 @@
     <div class="railway-bill-container">
         <div class="railway-bill" *ngFor="let rb of transport.railwayBills">
             <div class="">{{rb.reservationNumber}}</div>
+            <fa [name]="'rocket'" [border]=true></fa>
             <div class="wagon">
                 <div class="label">{{rb.wagon.wagonNumber}}</div>    
             </div>
         </div>
     </div>
+    <img src="http://www.railcargo.com/__resources/img/rca_logo.gif"/>
 </div>

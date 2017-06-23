@@ -1,0 +1,17 @@
+.clickable {
+    cursor: pointer;
+    
+    &:hover {
+        background: rgba(0,0,0,0.2);
+        transition: background-color 250ms linear;
+    }
+
+    &:active {
+        background: rgba(0,0,0,0.3);
+        transition: background-color 250ms linear;
+    }
+}
+
+.opened-icon i {
+    transition: transform 150ms linear;
+}

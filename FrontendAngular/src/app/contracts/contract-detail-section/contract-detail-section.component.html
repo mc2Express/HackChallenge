@@ -1,6 +1,15 @@
 <!--component html goes here -->
-<div class="section">
-    <div class="section-title" (click)="toggle()">{{title}}</div>
+<div class="section" [ngClass]="class">
+    <div class="section-title" (click)="toggle()">
+        <div class="opened-icon">
+            <fa [name]="'chevron-right'" [rotate]="iconRotation"></fa>
+        </div>
+        <div class="title-text">{{title}}</div>
+        <div class="state-icon">
+            <fa [name]="stateIcon"></fa>
+        </div>
+
+    </div>
     <div class="section-body" *ngIf="opened">
         <ng-content></ng-content>
     </div>

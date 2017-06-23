@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RailwayBill, TransportClass } from "assets/cargoInterfaces/Cargo";
 import { ContractService } from "app/contracts/shared/contract.service";
 
@@ -9,6 +9,8 @@ import { ContractService } from "app/contracts/shared/contract.service";
     styleUrls: ['railway-bills.component.scss']
 })
 export class RailwayBillsComponent {
+
+    @Input() transport: TransportClass
 
     constructor(private contractService: ContractService) {}
 

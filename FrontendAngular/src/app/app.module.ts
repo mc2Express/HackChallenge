@@ -8,6 +8,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(http: Http) {
                 useFactory: HttpLoaderFactory,
                 deps: [Http]
             }
-        })
+        }),
+        Angular2FontawesomeModule 
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]

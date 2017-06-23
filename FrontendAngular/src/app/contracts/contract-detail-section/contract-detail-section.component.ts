@@ -9,8 +9,13 @@ import { Component, Input } from '@angular/core';
 export class ContractDetailSectionComponent {
 
     @Input() title: string;
+    @Input() stateIcon: string;
 
     public opened: boolean = true;
+
+    public get iconRotation(): number {
+        return this.opened ? 90 : 0;
+    }
 
     public toggle(): void {
         this.opened = !this.opened;

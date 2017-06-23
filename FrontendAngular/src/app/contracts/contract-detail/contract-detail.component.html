@@ -1,16 +1,19 @@
 <!--component html goes here -->
-<div class="contract-detail" *ngIf="contract">
+<div class="contract-detail" *ngIf="contract" [ngClass]="{'full-screen': fullScreen}">
     <div class="header">
-        <div class="title">Vertrag mit Christian Schaiter</div>
-        <div class="subtitle">{{contract?.contractNr}}</div>
-        <div class="close" (click)="close()">x</div>
+        <div class="title">Vertrag <strong>{{contract?.contractNr}}</strong> <small>mit Christian Schaiter</small></div>
+        <div class="menu-button clickable" (click)="toggleFullScreen()">
+            <fa [name]="expandIcon"></fa>
+        </div>
+        <div class="menu-button clickable" (click)="close()">
+            <fa [name]="'close'"></fa>
+        </div>
     </div>
     <div class="body-wrapper">
         <div class="body">
-            <contract-detail-section [title]="'Lieferungen'">
-                <railway-bills></railway-bills>
+            <contract-detail-section [title]="getTransportTitle(tc)" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
+                <railway-bills [transport]="tc"></railway-bills>
             </contract-detail-section>
         </div>
     </div>
-    <div class="footer"></div>
 </div>

@@ -9,11 +9,12 @@ import { NgModule } from '@angular/core';
 import { ContractRowComponent } from "app/contracts/contract-row/contract-row.component";
 import { ContractDetailSectionComponent } from "app/contracts/contract-detail-section/contract-detail-section.component";
 import { RailwayBillsComponent } from "app/contracts/railway-bills/railway-bills.component";
+import { Angular2FontawesomeModule } from "angular2-fontawesome/angular2-fontawesome";
 
 // This Module's Components
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule, Angular2FontawesomeModule 
     ],
     declarations: [
         ContractTableComponent, ContractRowComponent, ContractDetailComponent, ContractDetailSectionComponent,
