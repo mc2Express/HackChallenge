@@ -54,8 +54,6 @@ export interface PurchaseContract {
 
 
 
-
-
 export interface RailwayBill {
     gvId: string;
     forwardingNumber: string;

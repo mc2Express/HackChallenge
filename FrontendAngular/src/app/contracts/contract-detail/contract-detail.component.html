@@ -11,7 +11,7 @@
     </div>
     <div class="body-wrapper">
         <div class="body">
-            <contract-detail-section [title]="getTransportTitle(tc)" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
+            <contract-detail-section [title]="getTransportTitle(tc)" [stateIcon]="'check-circle'" [opened]="true" *ngFor="let tc of contract.transportClasses">
                 <railway-bills [transportClass]="tc"></railway-bills>
             </contract-detail-section>
         </div>

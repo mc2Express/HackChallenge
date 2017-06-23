@@ -10,8 +10,7 @@ export class ContractDetailSectionComponent {
 
     @Input() title: string;
     @Input() stateIcon: string;
-
-    public opened: boolean = true;
+    @Input() opened: boolean;
 
     public get iconRotation(): number {
         return this.opened ? 90 : 0;
