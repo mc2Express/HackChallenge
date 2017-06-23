@@ -2,6 +2,15 @@
 
 
 
+import TransportClass = require("./TransportClass");
+import ITransportClass = TransportClass.TransportClass;
+import RailwayBill = require("./RailwayBill");
+import IRailwayBill = RailwayBill.RailwayBill;
+import IncomingInvoicesConfirmations = require("./IncomingInvoicesConfirmations");
+import IIncomingInvoicesConfirmations = IncomingInvoicesConfirmations.IncomingInvoicesConfirmations;
+import Wagon = require("./Wagon");
+import IWagon = Wagon.Wagon;
+
 export interface Contract {
 	contractNr: string;
 	spContractDescription: string;
@@ -12,9 +21,9 @@ export interface Contract {
 	offertOrganisation: string;
 	sumWagen: string;
 	sumTonnen: string;
-	transportClasses: TransportClass[];
-	railwayBills: RailwayBill[];
-	invoices: IncomingInvoicesConfirmations[];
-	wagons: Wagon[];
+	transportClasses: ITransportClass[];
+	railwayBills: IRailwayBill[];
+	invoices: IIncomingInvoicesConfirmations[];
+	wagons: IWagon[];
 
 }

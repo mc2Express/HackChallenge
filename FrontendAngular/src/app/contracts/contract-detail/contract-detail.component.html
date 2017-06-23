@@ -3,7 +3,7 @@
 <div class="contract-detail" *ngIf="contract" [ngClass]="{'full-screen': fullScreen}">
     
     <div class="header">
-        <div class="title">Vertrag <strong>{{contract?.contractNr}}</strong> <small>mit Christian Schaiter</small></div>
+        <div class="title">Vertrag <strong>{{contract?.contractNr}}</strong> <small>mit {{contract?.offertOrganisation}}</small></div>
         <div class="menu-button clickable" (click)="toggleFullScreen()">
             <fa [name]="expandIcon"></fa>
         </div>
@@ -16,9 +16,9 @@
             <contract-detail-section [title]="'Details'" [opened]="true" [stateIcon]="'check-circle'">
                 <form role="form">
                     <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Vertrag Detais</label>
+                        <label for="example-text-input" class="col-2 col-form-label">Organisation</label>
                         <div class="col-10">
-                            <input class="form-control" [(ngModel)]="contract.spContractDescription" name="spContractDescription">
+                            <input class="form-control" [(ngModel)]="contract.offertOrganisation" name="Organisation">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -28,15 +28,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Offert Text</label>
+                        <label for="example-text-input" class="col-2 col-form-label">Vertrag Detais</label>
                         <div class="col-10">
-                            <input class="form-control" [(ngModel)]="contract.offertTextIntern" name="offertTextIntern">
+                            <input class="form-control" [(ngModel)]="contract.spContractDescription" name="spContractDescription">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="example-text-input" class="col-2 col-form-label">Organisation</label>
+                        <label for="example-text-input" class="col-2 col-form-label">Offert Text</label>
                         <div class="col-10">
-                            <input class="form-control" [(ngModel)]="contract.offertOrganisation" name="Organisation">
+                            <input class="form-control" [(ngModel)]="contract.offertTextIntern" name="offertTextIntern">
                         </div>
                     </div>
                      <div class="form-group row" style="font-weight: bold;">
@@ -47,7 +47,7 @@
                      
                 </form>
             </contract-detail-section>
-            <contract-detail-section [title]="getTransportTitle(tc)"  [wagonsText]="tc.railwayBills.length" [opened]="false" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
+            <contract-detail-section [title]="getTransportTitle(tc)"  [wagonsText]="tc.railwayBills.length" [opened]="true" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
                 <railway-bills [transportClass]="tc"></railway-bills>
             </contract-detail-section>
         </div>

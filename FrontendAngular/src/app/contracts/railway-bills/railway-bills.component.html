@@ -3,16 +3,34 @@
     <div class="railway-bill-container">
         <contract-map [transportClass]="transportClass"></contract-map>
         <div class="railway-bill" *ngFor="let rb of transportClass.railwayBills">
-            <contract-detail-section [title]="rb.wagon.wagonNumber" [opened]="false"> 
+            <contract-detail-section [title]="'Wagen Nr. ' + rb.wagon.wagonNumber" [opened]="false"> 
                 <route-graph [railwayBill]="rb"></route-graph>
-                <div class="">{{rb.reservationNumber}}</div>
-                <div class="wagon">
-                    <div class="label">{{rb.wagon.wagonNumber}}</div>    
+                <div class="info">
+                    <div class="title">Details zum Wagon</div>
+                    <div class="item">
+                        <div class="label">Wagennummer:</div>
+                        <div class="value">{{rb.wagon.wagonNumber}}</div>
+                    </div>
+                    <div class="item">
+                        <div class="label">Gesamtgewicht:</div>
+                        <div class="value">{{rb.wagon.totalWeight}}</div>
+                    </div>
+                    <div class="item">
+                        <div class="label">info:</div>
+                        <div class="value">{{rb.wagon.wagonNumber}}</div>
+                    </div>
                 </div>
-                <div class="cargo">
-                    CARGO
+                <div class="info" *ngIf="rb.wagon.cargo">
+                    <div class="title">Güter</div>
+                    <div class="item">
+                        <div class="label">Beschreibung</div>
+                        <div class="value">{{rb.wagon.cargo.description}}</div>
+                    </div>
+                    <div class="item">
+                        <div class="label">Gewicht</div>
+                        <div class="value">{{rb.wagon.cargo.weight}}</div>
+                    </div>
                 </div>
             </contract-detail-section>
-            <!--<div class="title">{{rb.gvId}} - {{rb.wagon?.cargo?.id}}</div>-->
         </div>
     </div>
