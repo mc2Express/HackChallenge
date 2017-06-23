@@ -1,40 +1,48 @@
 // component css goes here
+
 .section-title {
-    background: #ccc;
-    margin: 0 -15px;
-    padding: 7px 15px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
+  background: #ccc;
+  margin: 0 -15px;
+  padding: 7px 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
 
-    &:hover {
-        background: #bbb;
-    }
+  &:hover {
+    background: #bbb;
+  }
 
-    &:active {
-        background: #aaa;
-    }
+  &:active {
+    background: #aaa;
+  }
 
-    .opened-icon {
-        flex: 0 1 20px;
-        max-width: 20px;
-    }
+  .opened-icon {
+    flex: 0 1 20px;
+    max-width: 20px;
+  }
 
-    .title-text {
-        flex: 1 1 1px;
-    }
+  .title-text {
+    flex: 1 1 1px;
+  }
 
-    .state-icon {
-        flex: 0 1 30px;
-        margin: -7px;
-        color:#0a630a;
-        font-size: 30px;
-        line-height: 38px;
-    }
+  .wagons {
+    flex: 0 1 125px;
+    color: #0a630a;
+    font-size: 18px;
+    line-height: 38px;
+  }
+
+  .state-icon {
+    flex: 0 1 30px;
+    margin: -7px;
+    color: #0a630a;
+    font-size: 30px;
+    line-height: 38px;
+  }
 }
 
 .section-body {
-    padding-left: 20px;
+  padding-left: 20px;
 }

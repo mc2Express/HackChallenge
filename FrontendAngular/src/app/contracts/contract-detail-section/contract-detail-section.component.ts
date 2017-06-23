@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 export class ContractDetailSectionComponent {
 
     @Input() title: string;
+    @Input() wagonsText: string;
     @Input() stateIcon: string;
     @Input() opened: boolean;
 
