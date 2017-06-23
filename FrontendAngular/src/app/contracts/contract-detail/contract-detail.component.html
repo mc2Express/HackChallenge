@@ -9,8 +9,51 @@
             <fa [name]="'close'"></fa>
         </div>
     </div>
+    <div>
+
+        <div class="card mb-3">
+            <div class="card-header">
+                sdfg
+            </div>
+            <form role="form">
+                <!--<fieldset class="form-group">
+                    <label>Text Input</label>
+                    <input class="form-control" [(ngModel)]="contract.spContractDescription" name="first"> {{contract.spContractDescription}}
+                </fieldset>-->
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Vertrag Detais</label>
+                    <div class="col-10">
+                        <input class="form-control" [(ngModel)]="contract.spContractDescription" name="spContractDescription">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Datum</label>
+                    <div class="col-10">
+                        <input class="form-control" [(ngModel)]="contract.creationDate" name="creationDate">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Offert Text</label>
+                    <div class="col-10">
+                        <input class="form-control" [(ngModel)]="contract.offertTextIntern" name="offertTextIntern">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-2 col-form-label">Organisation</label>
+                    <div class="col-10">
+                        <input class="form-control" [(ngModel)]="contract.offertOrganisation" name="Organisation">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
     <div class="body-wrapper">
         <div class="body">
+
+
+
             <contract-detail-section [title]="getTransportTitle(tc)" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
                 <railway-bills [transportClass]="tc"></railway-bills>
             </contract-detail-section>
