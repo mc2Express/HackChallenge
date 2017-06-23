@@ -7,6 +7,7 @@ import { Http } from "@angular/http";
 import { ILongitutaAttitute } from './ILongitutaAttitute';
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
+import { TrainStation } from '../../../assets/cargoInterfaces/Cargo';
 
 @Injectable()
 export class ContractService {
@@ -33,9 +34,13 @@ export class ContractService {
         this.contract = undefined;
     }
 
-    public getCoordinatsForName(name: string): Observable<ILongitutaAttitute> {
+    public getCoordinatsForName(station: TrainStation): Observable<ILongitutaAttitute> {
+        var search = station.name;
+        if(station.country.name){
+            search = `${search} ${ station.country.name}`;
+        }
     return this.http
-            .get(`  http://maps.googleapis.com/maps/api/geocode/json?address=${name}`)
+            .get(`  http://maps.googleapis.com/maps/api/geocode/json?address=${search}`)
             .map((r: any) => r.json().results[0].geometry.location)
             .catch((error: any) => {
                 console.error('An friendly error occurred', error);

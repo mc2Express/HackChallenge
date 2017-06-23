@@ -25,6 +25,7 @@ export class ContractMapComponent implements OnInit {
   @Input()
   public set transportClass(v: TransportClass) {
     this._TransportClass = v;
+    this.loadCoordinates();
   }
 
 
@@ -33,9 +34,9 @@ export class ContractMapComponent implements OnInit {
   public viaCoordinates: ILongitutaAttitute;
 
   private loadCoordinates() : void {    
-    this.ContractService.getCoordinatsForName(this.transportClass.from.name).subscribe(coordinates => this.fromCoordinates = coordinates);
-    this.ContractService.getCoordinatsForName(this.transportClass.from.name).subscribe(coordinates => this.fromCoordinates = coordinates);
-    this.ContractService.getCoordinatsForName(this.transportClass.from.name).subscribe(coordinates => this.fromCoordinates = coordinates);
+    this.ContractService.getCoordinatsForName(this.transportClass.from).subscribe(coordinates => this.fromCoordinates = coordinates);
+    this.ContractService.getCoordinatsForName(this.transportClass.via).subscribe(coordinates => this.toCoordinates = coordinates);
+    this.ContractService.getCoordinatsForName(this.transportClass.to).subscribe(coordinates => this.viaCoordinates = coordinates);
 
   }
 
