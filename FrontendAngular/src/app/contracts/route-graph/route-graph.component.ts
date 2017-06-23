@@ -24,10 +24,26 @@ export class RouteGraphComponent {
     };
 
     public get reservationReceiveDate(): string {
-        return this.contractService.contract.wagons[0].reservationReceiveDate;
+        return this.railwayBill.wagon.reservationReceiveDate;
     }
 
     public get reservationSendDate(): string {
-        return this.contractService.contract.wagons[0].reservationSendDate;
+        return this.railwayBill.wagon.reservationSendDate;
+    }
+
+    public get endStationDate(): string {
+        return this.railwayBill.wagon.invoice.executionDate;
+    }
+
+    public get endStation(): TrainStation {
+        if (!this.railwayBill.wagon.invoice) {
+            return undefined;
+        }
+        
+        return {
+            country: this.contractService.getCountryById("83"),
+            name: this.railwayBill.wagon.invoice.to,
+            stationId: undefined
+        }
     }
 }

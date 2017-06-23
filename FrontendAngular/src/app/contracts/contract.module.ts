@@ -5,7 +5,6 @@ import { Angular2FontawesomeModule } from "angular2-fontawesome/angular2-fontawe
 import { ArraySearchPipe } from './shared/ArraySearch.pipe';
 import { CommonModule } from "@angular/common";
 import { ContractDetailComponent } from "app/contracts/contract-detail/contract-detail.component";
-import { ContractDetailModule } from './contract-detail/contract-detail.module';
 import { ContractDetailSectionComponent } from "app/contracts/contract-detail-section/contract-detail-section.component";
 import { ContractMapComponent } from './contractMap/contractMap.component';
 import { ContractService } from "app/contracts/shared/contract.service";

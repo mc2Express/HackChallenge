@@ -4,3 +4,28 @@
     background: #ddd;
     margin: 0 -15px 0 0;
 }
+
+.info {
+    margin: 15px 0;
+    
+    .title {
+        margin-bottom: 10px;
+        flex: 1 1 1px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: row;
+        
+        .label {
+            flex: 0 1 150px;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+        .value {
+            flex: 1 1 1px;
+            padding: 5px;
+        }
+    }
+}
