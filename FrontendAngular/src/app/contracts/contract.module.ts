@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { NgPipesModule } from 'ng-pipes';
 import { RailwayBillsComponent } from "app/contracts/railway-bills/railway-bills.component";
-import { Angular2FontawesomeModule } from "angular2-fontawesome/angular2-fontawesome";
 import { RouteGraphComponent } from "app/contracts/route-graph/route-graph.component";
 import { RouteLocationComponent } from "app/contracts/route-location/route-location.component";
 
@@ -30,7 +29,7 @@ import { RouteLocationComponent } from "app/contracts/route-location/route-locat
         NgPipesModule
     ],
     declarations: [
-        ContractTableComponent, ContractRowComponent, ContractDetailComponent, ContractDetailSectionComponent,
+        ContractTableComponent, ContractDetailComponent, ContractDetailSectionComponent,
         RailwayBillsComponent, ContractMapComponent, RouteGraphComponent, RouteLocationComponent, ArraySearchPipe
     ],
     exports: [
