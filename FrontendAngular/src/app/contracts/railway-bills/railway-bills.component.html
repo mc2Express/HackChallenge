@@ -1,0 +1,12 @@
+<!--component html goes here -->
+<div class="transport" *ngFor="let transport of transports">
+    <div>{{transport.from?.name}} - {{transport.via?.name}} - {{transport.to?.name}}</div>
+    <div class="railway-bill-container">
+        <div class="railway-bill" *ngFor="let rb of transport.railwayBills">
+            <div class="">{{rb.reservationNumber}}</div>
+            <div class="wagon">
+                <div class="label">{{rb.wagon.wagonNumber}}</div>    
+            </div>
+        </div>
+    </div>
+</div>

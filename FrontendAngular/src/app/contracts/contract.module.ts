@@ -10,6 +10,9 @@ import { ContractRowComponent } from "app/contracts/contract-row/contract-row.co
 import { ContractService } from "app/contracts/shared/contract.service";
 import { ContractTableComponent } from './contract-table/contract-table.component';
 import { NgModule } from '@angular/core';
+import { ContractRowComponent } from "app/contracts/contract-row/contract-row.component";
+import { ContractDetailSectionComponent } from "app/contracts/contract-detail-section/contract-detail-section.component";
+import { RailwayBillsComponent } from "app/contracts/railway-bills/railway-bills.component";
 
 // This Module's Components
 @NgModule({
@@ -19,10 +22,9 @@ import { NgModule } from '@angular/core';
             apiKey: 'AIzaSyDCDbfOm-duBaHtjjhI9qT8MFc7p4Telt4'
         })
     ],
-
     declarations: [
         ContractTableComponent, ContractRowComponent, ContractDetailComponent, ContractDetailSectionComponent,
-        ContractMapComponent
+        RailwayBillsComponent, ContractMapComponent
     ],
     exports: [
         ContractTableComponent, ContractMapComponent

@@ -22,6 +22,7 @@ namespace Infrastructure.Parse.Impl
 
 					return new RailwayBill
 					{
+						GvId = rb?.Attribute(Attributes.GvId)?.Value,
 						ForwardingNumber = fs?.Element(Elements.ForwardingNumber)?.Value,
 						ForwardingStation = ParseTrainStation(fs),
 						TakeOverStation = ParseTrainStation(ts),
@@ -88,6 +89,11 @@ namespace Infrastructure.Parse.Impl
 			public static readonly string WagonCargoId = $"{Wagon}/{Cargo}/nhm";
 			public static readonly string WagonCargoDescription = $"{Wagon}/{Cargo}/nhm_bezeichnung";
 			public static readonly string WagonCargoWeight = $"{Wagon}/{Cargo}/bruttogewicht_kg";
+		}
+
+		private static class Attributes
+		{
+			public const string GvId = "referenznummer";
 		}
 	}
 }
