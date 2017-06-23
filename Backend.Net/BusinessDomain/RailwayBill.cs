@@ -30,6 +30,10 @@ namespace BusinessDomain
 
 		public string ReservationNumber { get; set; }
 
+		public string OtherTransportWayDescFrom { get; set; }
+
+		public string OtherTransportWayDescTo { get; set; }
+
 		public Wagon Wagon { get; set; }
 	}
 }
