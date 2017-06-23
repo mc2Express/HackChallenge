@@ -7,6 +7,15 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+
+    &:hover {
+        background: #bbb;
+    }
+
+    &:active {
+        background: #aaa;
+    }
 
     .opened-icon {
         flex: 0 1 20px;

@@ -1,14 +1,16 @@
 <!--component html goes here -->
-<div class="transport" *ngFor="let transport of transports">
-    <div>{{transport.from?.name}} - {{transport.via?.name}} - {{transport.to?.name}}</div>
+    <!--<div>{{transport.from?.name}} - {{transport.via?.name}} - {{transport.to?.name}}</div>-->
     <div class="railway-bill-container">
-        <div class="railway-bill" *ngFor="let rb of transport.railwayBills">
+        <div class="railway-bill" *ngFor="let rb of transportClass.railwayBills">
+            <div class="title">{{rb.gvId}} - {{rb.wagon?.cargo?.id}}</div>
+            <route-graph [railwayBill]="rb"></route-graph>
             <div class="">{{rb.reservationNumber}}</div>
-            <fa [name]="'rocket'" [border]=true></fa>
             <div class="wagon">
                 <div class="label">{{rb.wagon.wagonNumber}}</div>    
             </div>
+            <div class="cargo">
+                CARGO
+            </div>
         </div>
     </div>
-    <contract-map [transportClass]="transport"></contract-map>
-</div>
+    <contract-map [transportClass]="transportClass"></contract-map>

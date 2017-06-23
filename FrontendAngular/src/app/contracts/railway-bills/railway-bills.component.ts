@@ -10,7 +10,7 @@ import { ContractService } from "app/contracts/shared/contract.service";
 })
 export class RailwayBillsComponent {
 
-    @Input() transport: TransportClass
+    @Input() transportClass: TransportClass
 
     constructor(private contractService: ContractService) {}
 

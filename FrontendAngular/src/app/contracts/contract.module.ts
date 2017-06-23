@@ -12,6 +12,8 @@ import { ContractTableComponent } from './contract-table/contract-table.componen
 import { NgModule } from '@angular/core';
 import { RailwayBillsComponent } from "app/contracts/railway-bills/railway-bills.component";
 import { Angular2FontawesomeModule } from "angular2-fontawesome/angular2-fontawesome";
+import { RouteGraphComponent } from "app/contracts/route-graph/route-graph.component";
+import { RouteLocationComponent } from "app/contracts/route-location/route-location.component";
 
 // This Module's Components
 @NgModule({
@@ -24,7 +26,7 @@ import { Angular2FontawesomeModule } from "angular2-fontawesome/angular2-fontawe
     ],
     declarations: [
         ContractTableComponent, ContractRowComponent, ContractDetailComponent, ContractDetailSectionComponent,
-        RailwayBillsComponent, ContractMapComponent
+        RailwayBillsComponent, ContractMapComponent, RouteGraphComponent, RouteLocationComponent
     ],
     exports: [
         ContractTableComponent, ContractMapComponent
