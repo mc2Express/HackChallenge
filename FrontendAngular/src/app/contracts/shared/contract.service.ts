@@ -18,12 +18,12 @@ export class ContractService {
 
     search(): Observable<Contract[]> {
         return this.http
-          .get(`/cargo/Index`)
-          .map((r: any) => r.json() as Contract[])
-          .catch((error: any) => {
-              console.error('An friendly error occurred', error);
-              return Observable.throw(error.message || error);
-          });
+            .get(`/cargo/Index`)
+            .map((r: any) => r.json() as Contract[])
+            .catch((error: any) => {
+                console.error('An friendly error occurred', error);
+                return Observable.throw(error.message || error);
+            });
     }
 
     public setCurrentContract(contract: Contract): void {
@@ -36,12 +36,17 @@ export class ContractService {
 
     public getCoordinatsForName(station: TrainStation): Observable<ILongitutaAttitute> {
         var search = station.name;
-        if(station.country.name){
-            search = `${search} ${ station.country.name}`;
+        if (station.country.name) {
+            search = `${search} ${station.country.name}`;
         }
-    return this.http
+        return this.http
             .get(`  http://maps.googleapis.com/maps/api/geocode/json?address=${search}`)
             .map((r: any) => r.json().results[0].geometry.location)
+            .map((r: any) => <ILongitutaAttitute>{
+                lat: r.lat,
+                lng: r.lng,
+                description: station.name
+            })
             .catch((error: any) => {
                 console.error('An friendly error occurred', error);
                 return Observable.throw(error.message || error);

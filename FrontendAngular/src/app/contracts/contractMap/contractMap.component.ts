@@ -35,8 +35,8 @@ export class ContractMapComponent implements OnInit {
 
   private loadCoordinates() : void {    
     this.ContractService.getCoordinatsForName(this.transportClass.from).subscribe(coordinates => this.fromCoordinates = coordinates);
-    this.ContractService.getCoordinatsForName(this.transportClass.via).subscribe(coordinates => this.toCoordinates = coordinates);
-    this.ContractService.getCoordinatsForName(this.transportClass.to).subscribe(coordinates => this.viaCoordinates = coordinates);
+    this.ContractService.getCoordinatsForName(this.transportClass.via).subscribe(coordinates => this.viaCoordinates = coordinates);
+    this.ContractService.getCoordinatsForName(this.transportClass.to).subscribe(coordinates => this.toCoordinates = coordinates);
 
   }
 
