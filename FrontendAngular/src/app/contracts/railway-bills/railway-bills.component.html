@@ -1,7 +1,7 @@
 <!--component html goes here -->
     <!--<div>{{transport.from?.name}} - {{transport.via?.name}} - {{transport.to?.name}}</div>-->
     <div class="railway-bill-container">
-        <contract-map ></contract-map>
+        <contract-map [transportClass]="transportClass"></contract-map>
         <div class="railway-bill" *ngFor="let rb of transportClass.railwayBills">
             <contract-detail-section [title]="rb.wagon.wagonNumber" [opened]="false"> 
                 <route-graph [railwayBill]="rb"></route-graph>
