@@ -1,5 +1,9 @@
 // component css goes here
 
+  .hidden {
+    display: none;
+  }
+
 .section-title {
   background: #ccc;
   margin: 0 -15px;
@@ -26,6 +30,8 @@
   .title-text {
     flex: 1 1 1px;
   }
+
+
 
   .wagons {
     flex: 0 1 125px;

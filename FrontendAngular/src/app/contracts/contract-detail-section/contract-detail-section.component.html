@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="section-body" *ngIf="opened">
+    <div class="section-body"  [class.hidden]="!opened">
         <ng-content></ng-content>
     </div>
 </div>
