@@ -39,6 +39,12 @@
                             <input class="form-control" [(ngModel)]="contract.offertOrganisation" name="Organisation">
                         </div>
                     </div>
+                     <div class="form-group row" style="font-weight: bold;">
+                        <label for="example-text-input" class="col-3 col-form-label">Auftrags Volumen:</label>
+                        <label for="example-text-input" class="col-2 col-form-label">{{contract.sumWagen}} €</label>
+                        <label for="example-text-input" class="col-2 col-form-label">{{contract.sumTonnen}} t</label>
+                     </div>
+                     
                 </form>
             </contract-detail-section>
             <contract-detail-section [title]="getTransportTitle(tc)"  [wagonsText]="tc.railwayBills.length" [opened]="false" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
