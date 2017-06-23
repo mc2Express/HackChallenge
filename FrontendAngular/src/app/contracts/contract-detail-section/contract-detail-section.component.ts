@@ -9,8 +9,9 @@ import { Component, Input } from '@angular/core';
 export class ContractDetailSectionComponent {
 
     @Input() title: string;
+    @Input() wagonsText: string;
     @Input() stateIcon: string;
-    @Input() opened: boolean;
+    @Input() opened: boolean = false;
 
     public get iconRotation(): number {
         return this.opened ? 90 : 0;

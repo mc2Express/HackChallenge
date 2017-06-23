@@ -1,5 +1,7 @@
+
 <!--component html goes here -->
 <div class="contract-detail" *ngIf="contract" [ngClass]="{'full-screen': fullScreen}">
+    
     <div class="header">
         <div class="title">Vertrag <strong>{{contract?.contractNr}}</strong> <small>mit {{contract?.offertOrganisation}}</small></div>
         <div class="menu-button clickable" (click)="toggleFullScreen()">
@@ -39,7 +41,7 @@
                     </div>
                 </form>
             </contract-detail-section>
-            <contract-detail-section [title]="getTransportTitle(tc)" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
+            <contract-detail-section [title]="getTransportTitle(tc)"  [wagonsText]="tc.railwayBills.length" [opened]="false" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
                 <railway-bills [transportClass]="tc"></railway-bills>
             </contract-detail-section>
         </div>

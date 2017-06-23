@@ -21,7 +21,7 @@ import { RouteLocationComponent } from "app/contracts/route-location/route-locat
     imports: [
         CommonModule,
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyDCDbfOm-duBaHtjjhI9qT8MFc7p4Telt4'
+            apiKey: 'AIzaSyAiCZKIHu1tZTHOaWSWDEtXrmbPDcdc9dE'
         }),
         Angular2FontawesomeModule,
         FormsModule,

@@ -5,11 +5,17 @@
             <fa [name]="'chevron-right'" [rotate]="iconRotation"></fa>
         </div>
         <div class="title-text">{{title}}</div>
+
+        <div class="wagons" *ngIf="wagonsText">
+            <div class="sub-text">Wagons: {{wagonsText}}</div>
+        </div>
         <div class="state-icon">
+
             <fa [name]="stateIcon"></fa>
         </div>
     </div>
-    <div class="section-body" *ngIf="opened">
+
+    <div class="section-body"  [class.hidden]="!opened">
         <ng-content></ng-content>
     </div>
 </div>
