@@ -1,5 +1,5 @@
 .contract-detail {
-    background: blue;
+    background: #eee;
     height: 100%;
     width: 50%;
     position: absolute;
@@ -11,7 +11,7 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.75);
 
     &.full-screen {
-        width: 100%;
+        width: 80%;
     }
 
     .header {

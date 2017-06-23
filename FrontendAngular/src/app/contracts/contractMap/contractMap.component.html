@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row map">
   <div class="col-md-12">
     <agm-map style="height: 250px" [latitude]=" 46.60856" [longitude]="13.85062" [zoom]=5>
-      <agm-marker *ngIf="fromCoordinates" [latitude]="fromCoordinates.lat" [longitude]="fromCoordinates.lng" [label]="'Von'"> </agm-marker>
-      <agm-marker *ngIf="toCoordinates" [latitude]="toCoordinates.lat" [longitude]="toCoordinates.lng" [label]="'Nach'"> </agm-marker>
-      <agm-marker *ngIf="viaCoordinates" [latitude]="viaCoordinates.lat" [longitude]="viaCoordinates.lng" [label]="'Über'"> </agm-marker>
+      <agm-marker *ngIf="fromCoordinates" [latitude]="fromCoordinates.lat" [longitude]="fromCoordinates.lng" [label]="fromCoordinates.description"> </agm-marker>
+      <agm-marker *ngIf="toCoordinates" [latitude]="toCoordinates.lat" [longitude]="toCoordinates.lng" [label]="toCoordinates.description"> </agm-marker>
+      <agm-marker *ngIf="viaCoordinates" [latitude]="viaCoordinates.lat" [longitude]="viaCoordinates.lng" [label]="viaCoordinates.description"> </agm-marker>
 
 
       <agm-polyline>
@@ -11,7 +11,6 @@
         <!--<agm-polyline-point [latitude]="46.66851" [longitude]="13.9788401"> </agm-polyline-point>-->
         <agm-polyline-point *ngIf="viaCoordinates" [latitude]="viaCoordinates.lat" [longitude]="viaCoordinates.lng"> </agm-polyline-point>
         <agm-polyline-point *ngIf="toCoordinates" [latitude]="toCoordinates.lat" [longitude]="toCoordinates.lng"> </agm-polyline-point>
-
 
       </agm-polyline>
 

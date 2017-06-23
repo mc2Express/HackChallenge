@@ -1,14 +1,18 @@
 <!--component html goes here -->
-<div class="transport" *ngFor="let transport of transports">
-    <div>{{transport.from?.name}} - {{transport.via?.name}} - {{transport.to?.name}}</div>
+    <!--<div>{{transport.from?.name}} - {{transport.via?.name}} - {{transport.to?.name}}</div>-->
     <div class="railway-bill-container">
-        <div class="railway-bill" *ngFor="let rb of transport.railwayBills">
-            <div class="">{{rb.reservationNumber}}</div>
-            <fa [name]="'rocket'" [border]=true></fa>
-            <div class="wagon">
-                <div class="label">{{rb.wagon.wagonNumber}}</div>    
-            </div>
+        <contract-map [transportClass]="transportClass"></contract-map>
+        <div class="railway-bill" *ngFor="let rb of transportClass.railwayBills">
+            <contract-detail-section [title]="rb.gvId" [opened]="false"> 
+                <route-graph [railwayBill]="rb"></route-graph>
+                <div class="">{{rb.reservationNumber}}</div>
+                <div class="wagon">
+                    <div class="label">{{rb.wagon.wagonNumber}}</div>    
+                </div>
+                <div class="cargo">
+                    CARGO
+                </div>
+            </contract-detail-section>
+            <!--<div class="title">{{rb.gvId}} - {{rb.wagon?.cargo?.id}}</div>-->
         </div>
     </div>
-    <contract-map [transportClass]="transport"></contract-map>
-</div>
