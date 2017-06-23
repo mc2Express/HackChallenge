@@ -80,7 +80,7 @@ namespace Infrastructure.Parse.Impl
 			var from = tx.Descendants("BED_REL").FirstOrDefault()?.Descendants("VON").FirstOrDefault();
 			var to = tx.Descendants("BED_REL").FirstOrDefault()?.Descendants("NACH").FirstOrDefault();
 			var via = tx.Descendants("BED_REL").FirstOrDefault()?.Descendants("UEBER").FirstOrDefault();
-			return new TransportClass
+			var tc = new TransportClass
 			{
 				From = new TrainStation
 				{
@@ -114,6 +114,26 @@ namespace Infrastructure.Parse.Impl
 				},
 				SzVertragNr = tx.Descendants("SZ_VERTRAG_NR").FirstOrDefault()?.Value
 			};
+
+			// if bhf not found, maybe it's a border?
+			if (tc.From.Name == null)
+			{
+				tc.From.Name = from?.Descendants("GRZ").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value;
+			}
+			if (tc.From.StationId == null)
+			{
+				tc.From.StationId = from?.Descendants("GRZ").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value;
+			}
+			if (tc.To.Name == null)
+			{
+				tc.To.Name = to?.Descendants("GRZ").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value;
+			}
+			if (tc.To.StationId == null)
+			{
+				tc.To.StationId = to?.Descendants("GRZ").FirstOrDefault()?.Descendants("BEZ").FirstOrDefault()?.Value;
+			}
+
+			return tc;
 		}
 	}
 }

@@ -194,6 +194,7 @@ export interface Wagon {
     reservationSendDate: string;
     reservationReceiveDate: string;
     wagonStatus: WagonStatus[];
+    invoice: IncomingInvoicesConfirmations;
 }
 
 export interface TransportClass {

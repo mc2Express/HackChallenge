@@ -21,5 +21,7 @@ namespace BusinessDomain
 		public string ReservationReceiveDate { get; set; }
 
 		public IList<WagonStatus> WagonStatus { get; set; }
+
+		public IncomingInvoicesConfirmations Invoice { get; set; }
 	}
 }
