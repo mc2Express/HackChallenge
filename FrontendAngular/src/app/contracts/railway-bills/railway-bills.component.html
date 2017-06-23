@@ -3,7 +3,7 @@
     <div class="railway-bill-container">
         <contract-map [transportClass]="transportClass"></contract-map>
         <div class="railway-bill" *ngFor="let rb of transportClass.railwayBills">
-            <contract-detail-section [title]="rb.gvId" [opened]="false"> 
+            <contract-detail-section [title]="getTitle(rb)" [opened]="false"> 
                 <route-graph [railwayBill]="rb"></route-graph>
                 <div class="">{{rb.reservationNumber}}</div>
                 <div class="wagon">
