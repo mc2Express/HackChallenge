@@ -41,7 +41,7 @@
                     </div>
                 </form>
             </contract-detail-section>
-            <contract-detail-section [title]="getTransportTitle(tc)"  [wagonsText]="tc.railwayBills.length" [opened]="false" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
+            <contract-detail-section [title]="getTransportTitle(tc)"  [wagonsText]="tc.railwayBills.length" [opened]="true" [stateIcon]="'check-circle'" *ngFor="let tc of contract.transportClasses">
                 <railway-bills [transportClass]="tc"></railway-bills>
             </contract-detail-section>
         </div>
