@@ -1,5 +1,32 @@
-<!--component html goes here -->
-<div *ngFor="let contract of contracts">
-    <contract-row class="row" [contract]="contract"></contract-row>
+
+<div class="card mb-3">
+    <div class="card-header">
+       <input type="text" [(ngModel)]="queryString" id="search" placeholder="Suche nach Verträgen">
+    </div>
+    <div class="card-block table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Contract Nr</th>
+                    <th>Erstellt</th>
+                    <th>Offert Am</th>
+                    <th>Offert Nr</th>
+                    <th>Organisation</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="contracts">
+                <tr (click)="openContract(contract)"  *ngFor="let contract of contracts | arraySearch:queryString">
+                    <td>{{contract.contractNr}}</td>
+                    <td>{{contract.creationDate}}</td>
+                    <td>{{contract.offertDate}}</td>
+                    <td>{{contract.offertNr}}</td>
+                    <td>{{contract.offertOrganisation}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div>
+
 </div>
 <contract-detail></contract-detail>
