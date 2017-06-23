@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using BusinessDomain;
 using Infrastructure.Parse.Impl;
-using Newtonsoft.Json;
 
 namespace Infrastructure.Parse
 {
@@ -89,8 +88,14 @@ namespace Infrastructure.Parse
 				foreach (var contract in contracts)
 				{
 					var matchingTransportClasses = contract.TransportClasses.Where(
-						x => x.From.StationId == railwayBill.ForwardingStation.StationId
-						     && x.To.StationId == railwayBill.ReceivingStation.StationId);
+						x => TrainStationMatches(x.From, railwayBill.ForwardingStation)
+						     && TrainStationMatches(x.To, railwayBill.ReceivingStation)
+						     || x.From?.Name != null &&
+						     (StationNamesMatchLoosely(x.From.Name, railwayBill.OtherTransportWayDescFrom)
+						      || StationNamesMatchLoosely(x.From.Name, railwayBill.OtherTransportWayDescTo)
+						      || x.To?.Name != null && (
+							      StationNamesMatchLoosely(x.To.Name, railwayBill.OtherTransportWayDescFrom)
+							      || StationNamesMatchLoosely(x.To.Name, railwayBill.OtherTransportWayDescTo))));
 					if (matchingTransportClasses.Any())
 					{
 						if (contract.RailwayBills == null) contract.RailwayBills = new List<RailwayBill>();
@@ -115,11 +120,19 @@ namespace Infrastructure.Parse
 			{
 				foreach (var invoice in invoices)
 				{
-					if (invoice?.WagonNb != null && contract.Wagons != null &&
-					    contract.Wagons.Any(x => WagonMatches(x.WagonNumber, invoice.WagonNb)))
+					if (invoice?.WagonNb != null && contract.Wagons != null)
 					{
-						if (contract.Invoices == null) contract.Invoices = new List<IncomingInvoicesConfirmations>();
-						contract.Invoices.Add(invoice);
+						var matchingWagons = contract.Wagons.Where(x => WagonMatches(x.WagonNumber, invoice.WagonNb));
+						if (matchingWagons.Any())
+						{
+							if (contract.Invoices == null) contract.Invoices = new List<IncomingInvoicesConfirmations>();
+							contract.Invoices.Add(invoice);
+						}
+
+						foreach (var wag in matchingWagons)
+						{
+							wag.Invoice = invoice;
+						}
 					}
 				}
 
@@ -140,7 +153,7 @@ namespace Infrastructure.Parse
 							}
 						}
 
-						wagon.WagonStatus = wagonStatus.Where(x => WagonMatches11(x.WAGENNR, wagon.WagonNumber)).ToList();
+						wagon.WagonStatus = wagonStatus.Where(x => WagonMatches(x.WAGENNR, wagon.WagonNumber)).ToList();
 					}
 				}
 			}
@@ -170,16 +183,31 @@ namespace Infrastructure.Parse
 
 		private bool WagonMatches(string nr1, string nr2)
 		{
-			var nr11 = nr1?.Replace(" ", "")?.Replace("-", "");
-			var nr22 = nr2?.Replace(" ", "")?.Replace("-", "");
-			return nr11 != null && nr11 == nr22;
-		}
-
-		private bool WagonMatches11(string nr1, string nr2)
-		{
 			var nr11 = nr1?.Replace(" ", "")?.Replace("-", "")?.Substring(0, 11);
 			var nr22 = nr2?.Replace(" ", "")?.Replace("-", "")?.Substring(0, 11);
 			return nr11 != null && nr11 == nr22;
+		}
+
+		private bool StationIdMatches(string id1, string id2)
+		{
+			return id1 != null && id1?.Substring(0, 5) == id2?.Substring(0, 5);
+		}
+
+		private bool TrainStationMatches(TrainStation station1, TrainStation station2)
+		{
+			return station1 != null &&
+			       (StationIdMatches(station1.StationId, station2.StationId) ||
+			        station1.Name != null && station1.Name.Equals(station2.Name, StringComparison.InvariantCultureIgnoreCase));
+		}
+
+		private bool StationNamesMatchLoosely(string str1, string str2)
+		{
+			if (str1 == null) return false;
+			return str1.Equals(str2, StringComparison.InvariantCultureIgnoreCase);
+
+			//if (str1.Length <= 8) return str1.Equals(str2, StringComparison.InvariantCultureIgnoreCase);
+			//if (str2 == null || str2.Length <= 8) return false;
+			//return str1.Substring(0, 8).Equals(str2?.Substring(0, 8), StringComparison.InvariantCultureIgnoreCase);
 		}
 	}
 }

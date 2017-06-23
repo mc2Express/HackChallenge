@@ -46,7 +46,9 @@ namespace Infrastructure.Parse.Impl
 								Description = rb.XPathSelectElement(Elements.WagonCargoDescription)?.Value,
 								Weight = rb.XPathSelectElement(Elements.WagonCargoWeight)?.Value
 							}
-						}
+						},
+						OtherTransportWayDescFrom = rb.XPathSelectElement(Elements.StrVBez)?.Value,
+						OtherTransportWayDescTo = rb.XPathSelectElement(Elements.StrBBez)?.Value
 					};
 				}).ToList();
 
@@ -89,6 +91,12 @@ namespace Infrastructure.Parse.Impl
 			public static readonly string WagonCargoId = $"{Wagon}/{Cargo}/nhm";
 			public static readonly string WagonCargoDescription = $"{Wagon}/{Cargo}/nhm_bezeichnung";
 			public static readonly string WagonCargoWeight = $"{Wagon}/{Cargo}/bruttogewicht_kg";
+
+			public static readonly string StrVBez =
+				$"{DocumentHead}/andere_befoerderer/strecke_von/str_v_grenzpunkt/str_v_bezeichnung";
+
+			public static readonly string StrBBez =
+				$"{DocumentHead}/andere_befoerderer/strecke_bis/str_b_grenzpunkt/str_b_bezeichnung";
 		}
 
 		private static class Attributes

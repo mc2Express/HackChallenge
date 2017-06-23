@@ -17,4 +17,8 @@ export class RailwayBillsComponent {
     public get transports(): TransportClass[] {
         return this.contractService.contract.transportClasses;
     }
+
+    public getTitle(rb: RailwayBill): string {
+        return `Wagen Nr. ${rb.wagon.wagonNumber}`;
+    }
 }
